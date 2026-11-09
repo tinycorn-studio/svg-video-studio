@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive SVG Walk Cycle Demo (Procedural Kinematics)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #0b1329;
+      color: #f8fafc;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justifyContent: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1.5px solid #38bdf8;
+      border-radius: 999px;
+      padding: 4px 18px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #38bdf8;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+    #viewport-container {
+      position: relative;
+      width: 1200px;
+      height: 675px;
+      border: 2px solid #334155;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      background: #0b1329;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    .controls {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      background: #1e293b;
+      padding: 14px 28px;
+      border-radius: 999px;
+      margin-top: 18px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      border: 1px solid #475569;
+    }
+    .btn {
+      background: #38bdf8;
+      color: #0b1329;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn:hover {
+      background: #7dd3fc;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: #334155;
+      color: #f8fafc;
+    }
+    .btn-secondary:hover {
+      background: #475569;
+    }
+    .slider-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+    input[type="range"] {
+      accent-color: #38bdf8;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">Procedural SVG Kinematics Engine</div>
+    <h1>Demo Chuyển Động Nhân Vật Đi Bộ Bằng SVG</h1>
+    <p style="color: #94a3b8; font-size: 15px; margin-top: 6px;">
+      Mô phỏng khớp xương (Hip, Knee, Ankle, Arms) và lực nảy trọng tâm (Body Bounce) 60 FPS
+    </p>
+  </header>
+
+  <div id="viewport-container">
+    <svg id="stage" viewBox="0 0 1200 675">
+      <defs>
+        <linearGradient id="sky-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#0b1329" />
+          <stop offset="60%" stopColor="#1e293b" />
+          <stop offset="100%" stopColor="#334155" />
+        </linearGradient>
+      </defs>
+
+      <!-- Nền trời -->
+      <rect width="1200" height="675" fill="url(#sky-grad)" />
+
+      <!-- Mặt trăng -->
+      <circle cx="600" cy="160" r="45" fill="#fef08a" opacity="0.85" />
+      <circle cx="600" cy="160" r="70" fill="#fef08a" opacity="0.12" />
+
+      <!-- Lớp thành phố Parallax (Layer 1) -->
+      <g id="bg-city" fill="#182234" opacity="0.75">
+        <rect x="40" y="310" width="120" height="210" />
+        <rect x="180" y="270" width="90" height="250" />
+        <rect x="290" y="330" width="140" height="190" />
+        <rect x="450" y="250" width="110" height="270" />
+        <rect x="580" y="290" width="130" height="230" />
+        <rect x="730" y="270" width="100" height="250" />
+        <rect x="850" y="320" width="150" height="200" />
+        <rect x="1020" y="240" width="120" height="280" />
+      </g>
+
+      <!-- Mặt đường -->
+      <rect x="0" y="520" width="1200" height="155" fill="#0f172a" />
+      <line x1="0" y1="520" x2="1200" y2="520" stroke="#38bdf8" stroke-width="4" />
+
+      <!-- Vạch kẻ đường đứt đoạn -->
+      <g id="road-dashes" stroke="#94a3b8" stroke-width="6" stroke-linecap="round"></g>
+
+      <!-- Nhân vật 1: Flat Vector Explorer (Hoodie cam) -->
+      <g id="flat-walker" transform="translate(380, 0)"></g>
+
+      <!-- Nhân vật 2: MinutePhysics Chalkboard Stickman -->
+      <g id="stickman-walker" transform="translate(820, 0)"></g>
+
+      <!-- Nhãn tiêu đề 2 phong cách -->
+      <text x="380" y="590" text-anchor="middle" fill="#ff7b00" font-size="16" font-weight="800">
+        STYLE A: FLAT VECTOR WALKER
+      </text>
+      <text x="820" y="590" text-anchor="middle" fill="#ffd166" font-size="16" font-weight="800">
+        STYLE B: MINUTEPHYSICS STICKMAN
+      </text>
+    </svg>
+  </div>
+
+  <div class="controls">
+    <button id="btn-toggle" class="btn">⏸ Tạm dừng</button>
+    <div class="slider-group">
+      <label>Tốc độ đi bộ:</label>
+      <input type="range" id="speed-slider" min="0.2" max="2.5" step="0.1" value="1.0" />
+      <span id="speed-val">1.0x</span>
+    </div>
+    <button id="btn-bones" class="btn btn-secondary">🦴 Bật/Tắt Khớp Xương</button>
+  </div>
+
+  <script>
+    // Toàn bộ logic động học chuyển động khớp xương người đi bộ (Inverse Kinematics)
+    const GROUND_Y = 520;
+    let isPlaying = true;
+    let speed = 1.0;
+    let showBones = false;
+    let cycleTime = 0;
+
+    const flatWalkerEl = document.getElementById("flat-walker");
+    const stickmanEl = document.getElementById("stickman-walker");
+    const roadDashesEl = document.getElementById("road-dashes");
+    const bgCityEl = document.getElementById("bg-city");
+
+    function solveWalk(progress, scale = 0.75) {
+      const phi = progress * 2 * Math.PI;
+      const THIGH = 84 * scale;
+      const SHIN = 82 * scale;
+      const FOOT_H = 16 * scale;
+      const FOOT_T = 34 * scale;
+      const TORSO = 105 * scale;
+      const HEAD = 36 * scale;
+      const UPPER_ARM = 65 * scale;
+      const FOREARM = 60 * scale;
+
+      const bounce = -Math.cos(2 * phi) * 9 * scale;
+      const hipX = 0;
+      const hipY = GROUND_Y - (THIGH + SHIN - 8 * scale) + bounce;
+
+      const torsoAngle = 0.07 + Math.sin(phi) * 0.025;
+      const neckX = hipX + Math.sin(torsoAngle) * TORSO;
+      const neckY = hipY - Math.cos(torsoAngle) * TORSO;
+
+      const headBob = Math.sin(2 * phi - 0.4) * 2.5 * scale;
+      const headX = neckX + Math.sin(torsoAngle) * (HEAD + 6 * scale);
+      const headY = neckY - Math.cos(torsoAngle) * (HEAD + 6 * scale) + headBob;
+
+      const solveLeg = (t) => {
+        const thighAngle = Math.sin(t) * 0.52;
+        const kneeX = hipX + Math.sin(thighAngle) * THIGH;
+        const kneeY = hipY + Math.cos(thighAngle) * THIGH;
+
+        const swing = Math.max(0, -Math.sin(t - 0.25));
+        const kneeBend = 0.08 + Math.pow(swing, 1.4) * 0.98;
+        const shinAngle = thighAngle - kneeBend;
+
+        const ankleX = kneeX + Math.sin(shinAngle) * SHIN;
+        const ankleY = kneeY + Math.cos(shinAngle) * SHIN;
+
+        const footAngle = Math.sin(t) * 0.28 - swing * 0.22;
+        const heelX = ankleX - Math.cos(footAngle) * FOOT_H;
+        const heelY = ankleY + Math.sin(footAngle) * FOOT_H;
+        const toeX = ankleX + Math.cos(footAngle) * FOOT_T;
+        const toeY = ankleY - Math.sin(footAngle) * FOOT_T;
+
+        return { kneeX, kneeY, ankleX, ankleY, heelX, heelY, toeX, toeY };
+      };
+
+      const legL = solveLeg(phi);
+      const legR = solveLeg(phi + Math.PI);
+
+      const solveArm = (t, offset) => {
+        const sX = neckX + offset;
+        const sY = neckY + 10 * scale;
+        const upperAngle = -Math.sin(t) * 0.44;
+        const eX = sX + Math.sin(upperAngle) * UPPER_ARM;
+        const eY = sY + Math.cos(upperAngle) * UPPER_ARM;
+        const eBend = 0.35 + Math.max(0, -Math.sin(t)) * 0.45;
+        const foreAngle = upperAngle + eBend;
+        const hX = eX + Math.sin(foreAngle) * FOREARM;
+        const hY = eY + Math.cos(foreAngle) * FOREARM;
+        return { sX, sY, eX, eY, hX, hY };
+      };
+
+      const armL = solveArm(phi, 5 * scale);
+      const armR = solveArm(phi + Math.PI, -5 * scale);
+
+      return {
+        hipX, hipY, headX, headY, neckX, neckY,
+        legL, legR, armL, armR,
+        shadowScale: 1.0 + Math.cos(2 * phi) * 0.15,
+        shadowOpacity: 0.45 + Math.cos(2 * phi) * 0.12,
+      };
+    }
+
+    function renderFlatWalker(p) {
+      return `
+        <!-- Bóng đổ -->
+        <ellipse cx="${p.hipX}" cy="${GROUND_Y + 5}" rx="${55 * p.shadowScale}" ry="9" fill="rgba(0,0,0,0.5)" opacity="${p.shadowOpacity}" />
+
+        <!-- Tay sau -->
+        <g stroke="#d96b00" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="${p.armR.sX}" y1="${p.armR.sY}" x2="${p.armR.eX}" y2="${p.armR.eY}" />
+          <line x1="${p.armR.eX}" y1="${p.armR.eY}" x2="${p.armR.hX}" y2="${p.armR.hY}" />
+        </g>
+        <circle cx="${p.armR.hX}" cy="${p.armR.hY}" r="10" fill="#f6d5b8" />
+
+        <!-- Chân sau -->
+        <g stroke="#1e293b" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="${p.hipX}" y1="${p.hipY}" x2="${p.legR.kneeX}" y2="${p.legR.kneeY}" />
+          <line x1="${p.legR.kneeX}" y1="${p.legR.kneeY}" x2="${p.legR.ankleX}" y2="${p.legR.ankleY}" />
+        </g>
+        <!-- Giày sau -->
+        <polygon points="${p.legR.heelX-4},${p.legR.heelY+2} ${p.legR.ankleX},${p.legR.ankleY-8} ${p.legR.toeX+6},${p.legR.toeY+4} ${p.legR.toeX+3},${p.legR.toeY+11} ${p.legR.heelX-6},${p.legR.heelY+9}" fill="#cbd5e1" stroke="#475569" stroke-width="2" />
+
+        <!-- Thân áo hoodie -->
+        <polygon points="${p.armL.sX-18},${p.armL.sY} ${p.armL.sX+20},${p.armL.sY} ${p.hipX+22},${p.hipY+4} ${p.hipX-22},${p.hipY+4}" fill="#ff7b00" stroke="#d96b00" stroke-width="3" stroke-linejoin="round" />
+        <ellipse cx="${p.hipX}" cy="${p.hipY}" rx="24" ry="12" fill="#1e293b" />
+
+        <!-- Đầu & Mũ -->
+        <line x1="${p.hipX}" y1="${p.armL.sY+8}" x2="${p.headX}" y2="${p.headY+14}" stroke="#f6d5b8" stroke-width="15" stroke-linecap="round" />
+        <circle cx="${p.headX}" cy="${p.headY}" r="26" fill="#f6d5b8" />
+        <path d="M ${p.headX-28} ${p.headY-4} A 28 28 0 0 1 ${p.headX+28} ${p.headY-4} Z" fill="#0f172a" />
+        <path d="M ${p.headX-26} ${p.headY-2} Q ${p.headX-45} ${p.headY+4} ${p.headX-40} ${p.headY-8} Z" fill="#0f172a" />
+        <circle cx="${p.headX+13}" cy="${p.headY-2}" r="3.5" fill="#0f172a" />
+
+        <!-- Chân trước -->
+        <g stroke="#334155" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="${p.hipX}" y1="${p.hipY}" x2="${p.legL.kneeX}" y2="${p.legL.kneeY}" />
+          <line x1="${p.legL.kneeX}" y1="${p.legL.kneeY}" x2="${p.legL.ankleX}" y2="${p.legL.ankleY}" />
+        </g>
+        <!-- Giày trước -->
+        <polygon points="${p.legL.heelX-4},${p.legL.heelY+2} ${p.legL.ankleX},${p.legL.ankleY-8} ${p.legL.toeX+6},${p.legL.toeY+4} ${p.legL.toeX+3},${p.legL.toeY+11} ${p.legL.heelX-6},${p.legL.heelY+9}" fill="#ffffff" stroke="#0f172a" stroke-width="2" />
+        <line x1="${p.legL.heelX-6}" y1="${p.legL.heelY+9}" x2="${p.legL.toeX+3}" y2="${p.legL.toeY+11}" stroke="#ff7b00" stroke-width="3" stroke-linecap="round" />
+
+        <!-- Tay trước -->
+        <g stroke="#ff7b00" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="${p.armL.sX}" y1="${p.armL.sY}" x2="${p.armL.eX}" y2="${p.armL.eY}" />
+          <line x1="${p.armL.eX}" y1="${p.armL.eY}" x2="${p.armL.hX}" y2="${p.armL.hY}" />
+        </g>
+        <circle cx="${p.armL.hX}" cy="${p.armL.hY}" r="10" fill="#f6d5b8" />
+
+        ${showBones ? `
+          <!-- Khung xương Debug Kinematics -->
+          <circle cx="${p.hipX}" cy="${p.hipY}" r="5" fill="#38bdf8" />
+          <circle cx="${p.legL.kneeX}" cy="${p.legL.kneeY}" r="5" fill="#38bdf8" />
+          <circle cx="${p.legL.ankleX}" cy="${p.legL.ankleY}" r="5" fill="#38bdf8" />
+          <circle cx="${p.armL.eX}" cy="${p.armL.eY}" r="5" fill="#38bdf8" />
+        ` : ""}
+      `;
+    }
+
+    function renderStickmanWalker(p) {
+      return `
+        <ellipse cx="${p.hipX}" cy="${GROUND_Y + 5}" rx="${48 * p.shadowScale}" ry="7" fill="rgba(255,255,255,0.12)" />
+
+        <!-- Tay sau -->
+        <g stroke="rgba(255,255,255,0.4)" stroke-width="5" stroke-linecap="round">
+          <line x1="${p.armR.sX}" y1="${p.armR.sY}" x2="${p.armR.eX}" y2="${p.armR.eY}" />
+          <line x1="${p.armR.eX}" y1="${p.armR.eY}" x2="${p.armR.hX}" y2="${p.armR.hY}" />
+        </g>
+
+        <!-- Chân sau -->
+        <g stroke="rgba(255,255,255,0.4)" stroke-width="5" stroke-linecap="round">
+          <line x1="${p.hipX}" y1="${p.hipY}" x2="${p.legR.kneeX}" y2="${p.legR.kneeY}" />
+          <line x1="${p.legR.kneeX}" y1="${p.legR.kneeY}" x2="${p.legR.ankleX}" y2="${p.legR.ankleY}" />
+          <line x1="${p.legR.heelX}" y1="${p.legR.heelY}" x2="${p.legR.toeX}" y2="${p.legR.toeY}" />
+        </g>
+
+        <!-- Thân -->
+        <line x1="${p.hipX}" y1="${p.hipY}" x2="${p.neckX}" y2="${p.neckY}" stroke="#ffffff" stroke-width="6" stroke-linecap="round" />
+
+        <!-- Đầu -->
+        <circle cx="${p.headX}" cy="${p.headY}" r="24" fill="none" stroke="#ffffff" stroke-width="5" />
+        <path d="M ${p.headX+2} ${p.headY+4} Q ${p.headX+12} ${p.headY+14} ${p.headX+17} ${p.headY+2}" fill="none" stroke="#ffd166" stroke-width="3" stroke-linecap="round" />
+
+        <!-- Chân trước -->
+        <g stroke="#ffffff" stroke-width="6" stroke-linecap="round">
+          <line x1="${p.hipX}" y1="${p.hipY}" x2="${p.legL.kneeX}" y2="${p.legL.kneeY}" />
+          <line x1="${p.legL.kneeX}" y1="${p.legL.kneeY}" x2="${p.legL.ankleX}" y2="${p.legL.ankleY}" />
+          <line x1="${p.legL.heelX}" y1="${p.legL.heelY}" x2="${p.legL.toeX}" y2="${p.legL.toeY}" />
+        </g>
+
+        <!-- Tay trước -->
+        <g stroke="#ffffff" stroke-width="5" stroke-linecap="round">
+          <line x1="${p.armL.sX}" y1="${p.armL.sY}" x2="${p.armL.eX}" y2="${p.armL.eY}" />
+          <line x1="${p.armL.eX}" y1="${p.armL.eY}" x2="${p.armL.hX}" y2="${p.armL.hY}" />
+          <circle cx="${p.armL.hX}" cy="${p.armL.hY}" r="5" fill="#ffffff" />
+        </g>
+      `;
+    }
+
+    let lastTime = performance.now();
+    let scrollX = 0;
+
+    function loop(now) {
+      const dt = (now - lastTime) / 1000;
+      lastTime = now;
+
+      if (isPlaying) {
+        cycleTime = (cycleTime + dt * speed) % 1.0;
+        scrollX = (scrollX + dt * 180 * speed) % 1200;
+
+        // Cập nhật Parallax
+        bgCityEl.setAttribute("transform", `translate(${-(scrollX * 0.25) % 300}, 0)`);
+
+        // Vẽ vạch kẻ đường
+        let dashSvg = "";
+        for (let i = -1; i < 12; i++) {
+          const x = i * 120 - (scrollX % 120);
+          dashSvg += `<line x1="${x}" y1="565" x2="${x + 60}" y2="565" />`;
+        }
+        roadDashesEl.innerHTML = dashSvg;
+      }
+
+      const pose = solveWalk(cycleTime);
+      flatWalkerEl.innerHTML = renderFlatWalker(pose);
+      stickmanEl.innerHTML = renderStickmanWalker(pose);
+
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+
+    // Controls
+    const btnToggle = document.getElementById("btn-toggle");
+    btnToggle.addEventListener("click", () => {
+      isPlaying = !isPlaying;
+      btnToggle.textContent = isPlaying ? "⏸ Tạm dừng" : "▶ Tiếp tục";
+    });
+
+    const speedSlider = document.getElementById("speed-slider");
+    const speedVal = document.getElementById("speed-val");
+    speedSlider.addEventListener("input", (e) => {
+      speed = parseFloat(e.target.value);
+      speedVal.textContent = speed.toFixed(1) + "x";
+    });
+
+    const btnBones = document.getElementById("btn-bones");
+    btnBones.addEventListener("click", () => {
+      showBones = !showBones;
+      btnBones.classList.toggle("btn-secondary", !showBones);
+    });
+  </script>
+</body>
+</html>

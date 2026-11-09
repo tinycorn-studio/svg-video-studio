@@ -7,6 +7,7 @@ import { MinutePhysicsDemo } from "./styles/minute-physics/MinutePhysicsDemo";
 import { MoonDisappear15s } from "./styles/minute-physics/MoonDisappear15s";
 import { InfographicsDemo } from "./styles/infographics/InfographicsDemo";
 import { MoonDisappearInfographics15s } from "./styles/infographics/MoonDisappearInfographics15s";
+import { WalkCycleShowcase } from "./styles/characters/WalkCycleShowcase";
 import {
   Style1Showcase,
   Style2Showcase,
@@ -69,6 +70,14 @@ export const RemotionRoot: React.FC = () => {
         />
       </Folder>
       <Folder name="YouTube-Styles">
+        <Composition
+          id="WalkCycle-Demo"
+          component={WalkCycleShowcase}
+          durationInFrames={180}
+          fps={30}
+          width={1920}
+          height={1080}
+        />
         <Composition
           id="MoonDisappear-15s"
           component={MoonDisappear15s}
