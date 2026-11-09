@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 450">
+  <defs>
+    <linearGradient id="kid-hoodie" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4cc9f0"/>
+      <stop offset="65%" stop-color="#4361ee"/>
+      <stop offset="100%" stop-color="#3a0ca3"/>
+    </linearGradient>
+    <linearGradient id="kid-hoodie-hi" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a0e9fd"/>
+      <stop offset="100%" stop-color="#4cc9f0"/>
+    </linearGradient>
+    <linearGradient id="kid-hoodie-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a0ca3"/>
+      <stop offset="100%" stop-color="#1e0b57"/>
+    </linearGradient>
+    <linearGradient id="kid-backpack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="60%" stop-color="#ffb703"/>
+      <stop offset="100%" stop-color="#ff7b00"/>
+    </linearGradient>
+    <linearGradient id="kid-backpack-pocket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9e00"/>
+      <stop offset="100%" stop-color="#e85d04"/>
+    </linearGradient>
+    <linearGradient id="kid-pants" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2060"/>
+      <stop offset="100%" stop-color="#140f38"/>
+    </linearGradient>
+    <linearGradient id="kid-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a06138"/>
+      <stop offset="100%" stop-color="#844a22"/>
+    </linearGradient>
+    <linearGradient id="kid-skin-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6f3916"/>
+      <stop offset="100%" stop-color="#55290d"/>
+    </linearGradient>
+    <linearGradient id="kid-hair" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#261642"/>
+      <stop offset="100%" stop-color="#120824"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="150" cy="422" rx="55" ry="8" fill="#0b092b" opacity="0.3"/>
+
+  <!-- Shoes -->
+  <path d="M 108 412 C 107 406 119 403 133 406 C 137 407 139 414 139 418 C 139 422 133 423 124 423 C 114 423 108 419 108 412 Z" fill="#ffffff"/>
+  <path d="M 108 416 C 113 420 126 421 138 418 C 138 421 131 423 124 423 C 114 423 109 420 108 416 Z" fill="#f72585"/>
+  <path d="M 161 412 C 160 406 172 403 186 406 C 190 407 192 414 192 418 C 192 422 186 423 177 423 C 167 423 161 419 161 412 Z" fill="#ffffff"/>
+  <path d="M 161 416 C 166 420 179 421 191 418 C 191 421 184 423 177 423 C 167 423 162 420 161 416 Z" fill="#f72585"/>
+
+  <!-- Pants -->
+  <path d="M 112 284 L 143 284 L 138 410 L 110 410 Z" fill="url(#kid-pants)"/>
+  <path d="M 112 284 L 126 284 L 123 410 L 110 410 Z" fill="#140f38" opacity="0.6"/>
+  <path d="M 157 284 L 188 284 L 190 410 L 162 410 Z" fill="url(#kid-pants)"/>
+  <path d="M 157 284 L 169 284 L 173 410 L 162 410 Z" fill="#140f38" opacity="0.4"/>
+  <path d="M 139 284 Q 150 315 161 284 Z" fill="#140f38" opacity="0.7"/>
+
+  <!-- Hoodie Torso -->
+  <path d="M 106 166 C 94 198 96 250 100 286 C 118 290 182 290 200 286 C 204 250 206 198 194 166 C 178 158 122 158 106 166 Z" fill="url(#kid-hoodie)"/>
+  <path d="M 106 166 C 94 198 96 250 100 286 C 118 289 135 289 140 286 C 132 245 130 195 138 162 C 122 161 112 163 106 166 Z" fill="url(#kid-hoodie-dark)" opacity="0.55"/>
+  <path d="M 99 282 C 120 286 180 286 201 282 L 200 288 C 180 292 120 292 99 288 Z" fill="#3a0ca3" opacity="0.7"/>
+
+  <!-- Backpack -->
+  <rect x="120" y="180" width="60" height="72" rx="16" fill="url(#kid-backpack)"/>
+  <path d="M 120 196 C 120 187 127 180 136 180 L 142 180 L 142 252 L 136 252 C 127 252 120 245 120 236 Z" fill="#ff7b00" opacity="0.5"/>
+  <rect x="126" y="212" width="48" height="34" rx="8" fill="url(#kid-backpack-pocket)"/>
+  <path d="M 130 216 L 170 216" stroke="#ffd166" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 143 180 C 143 172 157 172 157 180" stroke="#ff7b00" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 125 186 C 117 182 110 172 112 165 C 114 163 118 165 122 170 C 126 175 128 182 128 186 Z" fill="#ff7b00"/>
+  <path d="M 175 186 C 183 182 190 172 188 165 C 186 163 182 165 178 170 C 174 175 172 182 172 186 Z" fill="#ffd166"/>
+
+  <!-- Left Arm -->
+  <path d="M 112 170 C 95 180 82 158 76 138 C 73 126 82 120 90 126 C 96 132 104 150 118 162 Z" fill="url(#kid-hoodie-dark)"/>
+  <path d="M 76 134 L 88 95 C 91 88 100 90 102 98 L 94 135 Z" fill="url(#kid-hoodie)"/>
+  <ellipse cx="94" cy="95" rx="6" ry="3.5" transform="rotate(-20 94 95)" fill="#3a0ca3"/>
+  <ellipse cx="93" cy="85" rx="7" ry="6" fill="url(#kid-skin)"/>
+  <path d="M 91 86 C 88 84 89 80 93 80 C 96 80 97 84 95 87 Z" fill="url(#kid-skin-dark)"/>
+  <path d="M 92 82 L 95 69 C 96 66 100 67 99 70 L 97 82 Z" fill="url(#kid-skin)"/>
+  <path d="M 88 83 L 90 73 C 91 71 94 72 93 74 L 92 84 Z" fill="url(#kid-skin)"/>
+
+  <!-- Right Arm -->
+  <path d="M 188 170 C 205 180 218 158 224 138 C 227 126 218 120 210 126 C 204 132 196 150 182 162 Z" fill="url(#kid-hoodie)"/>
+  <path d="M 188 170 C 196 174 208 162 216 145 C 220 137 220 130 216 128 C 210 132 202 150 188 165 Z" fill="url(#kid-hoodie-hi)" opacity="0.7"/>
+  <path d="M 224 134 L 212 95 C 209 88 200 90 198 98 L 206 135 Z" fill="url(#kid-hoodie)"/>
+  <ellipse cx="206" cy="95" rx="6" ry="3.5" transform="rotate(20 206 95)" fill="#3a0ca3"/>
+  <ellipse cx="207" cy="85" rx="7" ry="6" fill="url(#kid-skin)"/>
+  <path d="M 208 82 L 218 68 C 220 65 224 67 222 70 L 213 83 Z" fill="url(#kid-skin)"/>
+  <path d="M 205 82 L 211 72 C 213 70 216 71 215 73 L 210 83 Z" fill="url(#kid-skin)"/>
+
+  <!-- Head & Hair -->
+  <ellipse cx="150" cy="155" rx="28" ry="12" fill="url(#kid-hoodie-dark)"/>
+  <ellipse cx="150" cy="153" rx="24" ry="9" fill="url(#kid-hoodie)"/>
+  <ellipse cx="150" cy="151" rx="18" ry="6" fill="#1e0b57"/>
+  <circle cx="150" cy="112" r="36" fill="url(#kid-hair)"/>
+  <circle cx="122" cy="112" r="11" fill="url(#kid-hair)"/>
+  <circle cx="178" cy="112" r="11" fill="url(#kid-hair)"/>
+  <circle cx="132" cy="90" r="13" fill="url(#kid-hair)"/>
+  <circle cx="168" cy="90" r="13" fill="url(#kid-hair)"/>
+  <circle cx="150" cy="83" r="14" fill="url(#kid-hair)"/>
+  <circle cx="150" cy="82" r="11" fill="#4361ee" opacity="0.35"/>
+  <circle cx="166" cy="88" r="9" fill="#4cc9f0" opacity="0.4"/>
+  <ellipse cx="120" cy="118" rx="5" ry="7" transform="rotate(-15 120 118)" fill="url(#kid-skin)"/>
+  <ellipse cx="120" cy="118" rx="2.5" ry="4" transform="rotate(-15 120 118)" fill="url(#kid-skin-dark)"/>
+  <ellipse cx="180" cy="118" rx="5" ry="7" transform="rotate(15 180 118)" fill="url(#kid-skin)"/>
+  <ellipse cx="180" cy="118" rx="2.5" ry="4" transform="rotate(15 180 118)" fill="url(#kid-skin-dark)"/>
+  <path d="M 142 135 L 158 135 L 157 148 L 143 148 Z" fill="url(#kid-skin)"/>
+</svg>

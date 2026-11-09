@@ -3,8 +3,8 @@ import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
 import { Sprite, Tag, clamp, useReveal } from "./parts";
 import { C, EASE_OUT, FONT } from "./theme";
 
-const BASE_Y = 880;
-const PX_PER_UNIT = 11; // 50 → 550px tall
+const BASE_Y = 1500;
+const PX_PER_UNIT = 7.5; // 50 → 375px tall
 
 const Bar: React.FC<{
   x: number;
@@ -72,26 +72,27 @@ export const Scene5Data: React.FC = () => {
   const headTwo = useReveal(134, 18);
   const sustainable = useReveal(150, 20);
   const multiplier = useReveal(268, 18);
+  const op = useReveal(130, 24);
   const pulse = 1 + 0.04 * Math.sin(frame * 0.3);
 
   return (
     <AbsoluteFill>
-      <Tag text="ESA · Báo cáo môi trường không gian 2026" x={96} y={70} size={34} />
+      <Tag text="ESA · Space Environment Report 2026" x={72} y={80} size={30} />
 
-      {/* LEFT: 10 launches per day */}
+      {/* TOP: 10 launches per day */}
       <div
         style={{
           position: "absolute",
-          left: 96,
-          top: 190,
+          left: 72,
+          top: 150,
           fontFamily: FONT,
           color: C.white,
           opacity: head,
         }}
       >
-        <div style={{ fontSize: 190, fontWeight: 800, color: C.gold, lineHeight: 1 }}>10</div>
+        <div style={{ fontSize: 200, fontWeight: 800, color: C.gold, lineHeight: 1 }}>10</div>
         <div style={{ fontSize: 44, fontWeight: 600, color: C.lilac }}>
-          vệ tinh mới được phóng mỗi ngày
+          new satellites launched every day
         </div>
       </div>
       {Array.from({ length: 10 }, (_, i) => {
@@ -103,9 +104,9 @@ export const Scene5Data: React.FC = () => {
           <Sprite
             key={i}
             name={i % 2 ? "starlink" : "satellite"}
-            x={170 + col * 150}
-            y={640 + row * 160}
-            size={140}
+            x={130 + col * 205}
+            y={630 + row * 170}
+            size={180}
             rotate={-18 + ((i * 11) % 36)}
             scale={pop}
             opacity={pop}
@@ -113,28 +114,30 @@ export const Scene5Data: React.FC = () => {
         );
       })}
 
-      {/* RIGHT: Health Index */}
+      {/* BOTTOM: health index */}
       <div
         style={{
           position: "absolute",
-          left: 1020,
-          top: 70,
-          width: 820,
-          fontFamily: FONT,
-          color: C.white,
+          left: 0,
+          right: 0,
+          top: 905,
           textAlign: "center",
+          fontFamily: FONT,
+          fontWeight: 800,
+          fontSize: 52,
+          color: C.white,
           opacity: headTwo,
         }}
       >
-        <div style={{ fontSize: 46, fontWeight: 800 }}>Chỉ số sức khỏe quỹ đạo</div>
+        Orbital health index
       </div>
 
       <div
         style={{
           position: "absolute",
-          left: 1000,
+          left: 250,
           top: BASE_Y - PX_PER_UNIT,
-          width: 840,
+          width: 600,
           height: 4,
           background: `repeating-linear-gradient(90deg, ${C.cyan} 0 18px, transparent 18px 32px)`,
           opacity: sustainable,
@@ -143,31 +146,35 @@ export const Scene5Data: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          left: 1000,
-          top: BASE_Y - PX_PER_UNIT - 52,
+          left: 850,
+          top: BASE_Y - PX_PER_UNIT - 30,
+          width: 220,
           fontFamily: FONT,
           fontWeight: 600,
-          fontSize: 30,
+          fontSize: 26,
+          lineHeight: 1.15,
           color: C.cyan,
           opacity: sustainable,
         }}
       >
-        mức bền vững = 1
+        sustainable
+        <br />
+        level = 1
       </div>
 
-      <Bar x={1090} value={4} from={140} color={C.cyan} label="Năm trước" />
-      <Bar x={1450} value={50} from={160} color={C.magenta} label="Báo cáo 2026" />
+      <Bar x={300} value={4} from={140} color={C.cyan} label="Last year" />
+      <Bar x={620} value={50} from={160} color={C.magenta} label="2026 report" />
 
       <div
         style={{
           position: "absolute",
-          left: 1000,
-          top: 330,
-          width: 420,
+          left: 60,
+          top: 1030,
+          width: 500,
           textAlign: "center",
           fontFamily: FONT,
           fontWeight: 800,
-          fontSize: 110,
+          fontSize: 140,
           color: C.white,
           opacity: multiplier,
           scale: pulse * multiplier,
@@ -175,6 +182,11 @@ export const Scene5Data: React.FC = () => {
         }}
       >
         ×50
+      </div>
+
+      {/* the people watching the numbers */}
+      <div style={{ opacity: op, translate: `${(1 - op) * -80}px 0` }}>
+        <Sprite name="operator" x={150} y={1345} size={330} />
       </div>
     </AbsoluteFill>
   );

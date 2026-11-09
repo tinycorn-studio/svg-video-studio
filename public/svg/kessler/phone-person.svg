@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <defs>
+    <linearGradient id="phonep-sweater" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="60%" stop-color="#ffb703"/>
+      <stop offset="100%" stop-color="#ff7b00"/>
+    </linearGradient>
+    <linearGradient id="phonep-sweater-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9e00"/>
+      <stop offset="100%" stop-color="#d95d00"/>
+    </linearGradient>
+    <linearGradient id="phonep-pants" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2060"/>
+      <stop offset="100%" stop-color="#140f38"/>
+    </linearGradient>
+    <linearGradient id="phonep-skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8cbb0"/>
+      <stop offset="100%" stop-color="#e8af8e"/>
+    </linearGradient>
+    <linearGradient id="phonep-hair" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d1547"/>
+      <stop offset="60%" stop-color="#190930"/>
+      <stop offset="100%" stop-color="#0c031c"/>
+    </linearGradient>
+    <linearGradient id="phonep-phone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2d2252"/>
+      <stop offset="100%" stop-color="#130d29"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="200" cy="576" rx="72" ry="10" fill="#0b092b" opacity="0.3"/>
+
+  <!-- Shoes & Legs -->
+  <path d="M152 562c-1-6 14-9 29-6 6 2 8 9 8 14 0 4-7 6-17 6-14 0-20-5-20-14z" fill="#4361ee"/>
+  <path d="M153 570c5 3 17 5 33 2 2 2-3 4-14 4-12 0-18-3-19-6z" fill="#ffffff" opacity="0.8"/>
+  <path d="M211 562c-1-6 14-9 29-6 6 2 8 9 8 14 0 4-7 6-17 6-14 0-20-5-20-14z" fill="#4361ee"/>
+  <path d="M212 570c5 3 17 5 33 2 2 2-3 4-14 4-12 0-18-3-19-6z" fill="#ffffff" opacity="0.8"/>
+  <path d="M155 392h38l-6 168h-33zM207 392h38l4 168h-33z" fill="url(#phonep-pants)"/>
+  <path d="M155 392h18l-5 168h-14z" fill="#0e0826" opacity="0.5"/>
+  <path d="M190 390q10 35 20 0z" fill="#0e0826" opacity="0.6"/>
+
+  <!-- Torso & Golden Sweater -->
+  <path d="M145 220c-16 35-12 115-5 174 18 5 98 5 118 0 7-59 11-139-5-174-18-10-90-10-108 0z" fill="url(#phonep-sweater)"/>
+  <path d="M145 220c-16 35-12 115-5 174 15 3 32 3 40 1-8-55-10-120-2-176-12 0-25 1-33 1z" fill="url(#phonep-sweater-dark)" opacity="0.4"/>
+  <path d="M140 388c20 6 100 6 120 0l-1 8c-20 6-98 6-118 0z" fill="#d95d00" opacity="0.7"/>
+
+  <!-- Left Arm (Holding phone) -->
+  <path d="M147 222c-18 14-30 48-32 88-1 14 6 24 16 26 12-14 16-36 18-62 2-20 6-40 10-50z" fill="url(#phonep-sweater-dark)"/>
+  <path d="M116 308l46 32c4 3 10-1 12-6l-20-36z" fill="url(#phonep-sweater)"/>
+  <ellipse cx="168" cy="336" rx="6" ry="4" transform="rotate(25 168 336)" fill="#ff7b00"/>
+  <!-- Left hand gripping phone -->
+  <ellipse cx="174" cy="334" rx="6" ry="5" fill="url(#phonep-skin)"/>
+  <path d="M172 322c3 0 5 4 5 9 0 5-2 9-5 9z" fill="url(#phonep-skin)"/>
+
+  <!-- Right Arm (Holding phone) -->
+  <path d="M253 222c18 14 30 48 32 88 1 14-6 24-16 26-12-14-16-36-18-62-2-20-6-40-10-50z" fill="url(#phonep-sweater)"/>
+  <path d="M284 308l-46 32c-4 3-10-1-12-6l20-36z" fill="url(#phonep-sweater)"/>
+  <ellipse cx="232" cy="336" rx="6" ry="4" transform="rotate(-25 232 336)" fill="#ff7b00"/>
+  <!-- Right hand gripping phone -->
+  <ellipse cx="226" cy="334" rx="6" ry="5" fill="url(#phonep-skin)"/>
+  <path d="M228 322c-3 0-5 4-5 9 0 5 2 9 5 9z" fill="url(#phonep-skin)"/>
+
+  <!-- SMARTPHONE IN CENTER -->
+  <g id="phonep-smartphone">
+    <!-- Phone body -->
+    <rect x="172" y="274" width="56" height="96" rx="10" fill="url(#phonep-phone)"/>
+    <!-- Rim bevel -->
+    <rect x="173" y="275" width="54" height="94" rx="9" fill="none" stroke="#48387a" stroke-width="1.2"/>
+    <!-- Dark screen -->
+    <rect x="176" y="280" width="48" height="84" rx="6" fill="#0b092b"/>
+
+    <!-- Screen speaker/camera notch -->
+    <rect x="195" y="282" width="10" height="2" rx="1" fill="#1f1842"/>
+
+    <!-- 'NO SIGNAL' ICON (cyan bars with magenta diagonal slash) -->
+    <!-- Signal Bar 1 (Short) -->
+    <rect x="187" y="326" width="5.5" height="9" rx="1.5" fill="#4cc9f0"/>
+    <!-- Signal Bar 2 (Medium) -->
+    <rect x="196" y="318" width="5.5" height="17" rx="1.5" fill="#4cc9f0"/>
+    <!-- Signal Bar 3 (Tall) -->
+    <rect x="205" y="309" width="5.5" height="26" rx="1.5" fill="#4cc9f0"/>
+
+    <!-- Magenta Diagonal Slash Across Bars -->
+    <line x1="182" y1="306" x2="216" y2="338" stroke="#f72585" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Small screen status dot -->
+    <circle cx="218" cy="285" r="1.5" fill="#f72585"/>
+  </g>
+
+  <!-- Neck & Collar -->
+  <path d="M190 178h20l2 44h-24z" fill="url(#phonep-skin)"/>
+  <path d="M190 178h10l-1 44h-9z" fill="#d49575" opacity="0.6"/>
+  <path d="M176 216c14 10 34 10 48 0l-4 12c-14 8-36 8-48 0z" fill="#ff9e00"/>
+
+  <!-- Head Base -->
+  <circle cx="200" cy="144" r="42" fill="url(#phonep-skin)"/>
+
+  <!-- Ears -->
+  <ellipse cx="158" cy="146" rx="5" ry="8" fill="url(#phonep-skin)"/>
+  <ellipse cx="242" cy="146" rx="5" ry="8" fill="url(#phonep-skin)"/>
+
+  <!-- Stylish Modern Hair -->
+  <path d="M156 142c-2-34 16-44 44-44 30 0 46 12 44 44 0-22-6-36-28-36-20 0-46 6-52 20-4 8-6 12-8 16z" fill="url(#phonep-hair)"/>
+  <path d="M158 132c2-24 22-32 44-32 26 0 42 14 40 34-6-14-18-20-36-20-20 0-36 6-44 18z" fill="url(#phonep-hair)"/>
+  <path d="M158 126c0 15 3 24 5 24s2-9 3-20c2-15 16-24 34-24 16 0 30 8 38 18 1-12-10-24-36-24-26 0-44 10-44 26z" fill="url(#phonep-hair)"/>
+  <path d="M178 105c14-2 30-1 42 3" stroke="#5d3587" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Worried Eyebrows (Furrowed, angled up in center) -->
+  <path d="M175 133q11-7 19-3M225 133q-11-7-19-3" stroke="#4a2559" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+
+  <!-- Tiny Dot Eyes (Looking down at phone) -->
+  <circle cx="186" cy="146" r="3.2" fill="#140f38"/>
+  <circle cx="186" cy="147.5" r="1.1" fill="#fff"/>
+  <circle cx="214" cy="146" r="3.2" fill="#140f38"/>
+  <circle cx="214" cy="147.5" r="1.1" fill="#fff"/>
+
+  <!-- Small Worried / Trembling Mouth -->
+  <path d="M194 167q6-4 12 0" stroke="#b25d3b" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+
+  <!-- Worried Sweat Drop near temple -->
+  <path d="M232 136c-2 2-3 4-3 6 0 2.5 1.8 4 3.5 4s3.5-1.5 3.5-4c0-2-1-4-3-6z" fill="#4cc9f0" opacity="0.85"/>
+  <circle cx="233" cy="142" r="1" fill="#ffffff"/>
+
+  <!-- Cheeks -->
+  <circle cx="172" cy="154" r="6" fill="#ff5d8f" opacity="0.2"/>
+  <circle cx="228" cy="154" r="6" fill="#ff5d8f" opacity="0.2"/>
+</svg>

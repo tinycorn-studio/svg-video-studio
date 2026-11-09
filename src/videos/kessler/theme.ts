@@ -3,7 +3,7 @@ import { loadFont } from "@remotion/google-fonts/BeVietnamPro";
 
 export const { fontFamily: FONT } = loadFont("normal", {
   weights: ["600", "800"],
-  subsets: ["latin", "vietnamese"],
+  subsets: ["latin"],
 });
 
 export const C = {
@@ -21,8 +21,9 @@ export const C = {
 } as const;
 
 export const FPS = 30;
-export const W = 1920;
-export const H = 1080;
+/** Vertical Full HD (9:16). */
+export const W = 1080;
+export const H = 1920;
 
 /** Scene lengths (frames) BEFORE overlapping transitions. */
 export const TRANSITION = 12;
@@ -56,23 +57,23 @@ export const svg = (name: string) => staticFile(`svg/kessler/${name}.svg`);
 export const EASE_OUT = Easing.bezier(0.16, 1, 0.3, 1);
 export const EASE_IN_OUT = Easing.bezier(0.65, 0, 0.35, 1);
 
-/** Subtitle cues in seconds on the absolute timeline (Vietnamese VO script). */
+/** Subtitle cues in seconds on the absolute timeline (English voice-over script). */
 export const CUES: { from: number; to: number; text: string }[] = [
-  { from: 0.2, to: 3.9, text: "Ngay lúc này, hơn 15.000 vệ tinh đang bay trên đầu bạn." },
-  { from: 3.9, to: 5.2, text: "Nhưng chúng không cô đơn." },
-  { from: 5.3, to: 8.0, text: "Hơn 68.000 vật thể lớn hơn 10 cm." },
-  { from: 8.0, to: 11.0, text: "1,5 triệu mảnh nhỏ hơn, từ 1 đến 10 cm." },
-  { from: 11.0, to: 14.3, text: "Tốc độ 27.000 km/h. Nhanh gấp 10 lần viên đạn." },
-  { from: 14.4, to: 17.8, text: "Năm 1978, nhà khoa học NASA Donald Kessler cảnh báo:" },
-  { from: 17.8, to: 22.0, text: "một vụ va chạm tạo ra mảnh vỡ, mảnh vỡ gây ra va chạm mới." },
-  { from: 22.0, to: 26.2, text: "Một hiệu ứng domino không thể dừng lại." },
-  { from: 26.4, to: 30.4, text: "Năm 2009, hai vệ tinh đâm nhau và tạo ra hàng nghìn mảnh vỡ." },
-  { from: 30.4, to: 35.0, text: "Nếu chuỗi phản ứng vượt ngưỡng, quỹ đạo thấp có thể thành vùng cấm." },
-  { from: 35.0, to: 37.8, text: "Phóng tên lửa sẽ cực kỳ nguy hiểm." },
-  { from: 38.0, to: 42.0, text: "Báo cáo ESA 2026: mỗi ngày có khoảng 10 vệ tinh mới được phóng lên." },
-  { from: 42.0, to: 46.4, text: "Chỉ số sức khỏe quỹ đạo của ESA nhảy từ 4 lên 50 chỉ trong một năm." },
-  { from: 46.4, to: 49.3, text: "Gấp 50 lần mức bền vững." },
-  { from: 49.6, to: 53.4, text: "Giải pháp: đưa vệ tinh hết hạn về khí quyển, chủ động thu gom rác." },
-  { from: 53.4, to: 57.0, text: "ESA đặt mục tiêu hạn chế tối đa rác mới vào năm 2030." },
-  { from: 57.0, to: 60.0, text: "Bầu trời không vô tận. Đừng biến nó thành bãi rác." },
+  { from: 0.2, to: 3.9, text: "Right now, over 15,800 working satellites are flying above your head." },
+  { from: 3.9, to: 5.2, text: "But they're not alone." },
+  { from: 5.3, to: 8.0, text: "More than 68,000 objects larger than ten centimeters." },
+  { from: 8.0, to: 11.0, text: "Plus 1.5 million fragments between one and ten centimeters." },
+  { from: 11.0, to: 14.3, text: "27,000 km/h. Ten times faster than a bullet." },
+  { from: 14.4, to: 17.8, text: "In 1978, NASA scientist Donald Kessler warned:" },
+  { from: 17.8, to: 22.0, text: "One collision makes debris, and debris causes more collisions." },
+  { from: 22.0, to: 26.2, text: "An unstoppable domino effect." },
+  { from: 26.4, to: 30.4, text: "In 2009, two satellites collided and shattered into thousands of pieces." },
+  { from: 30.4, to: 34.4, text: "Past a tipping point, low orbit could become a no-go zone." },
+  { from: 34.4, to: 37.8, text: "Rockets, internet, weather forecasts: all at risk." },
+  { from: 38.0, to: 42.0, text: "ESA's 2026 report: about ten new satellites launch every day." },
+  { from: 42.0, to: 46.4, text: "Its orbital health index jumped from 4 to 50 in a single year." },
+  { from: 46.4, to: 49.3, text: "Fifty times beyond sustainable." },
+  { from: 49.6, to: 53.4, text: "The fix: bring dead satellites down, and actively clean up debris." },
+  { from: 53.4, to: 57.0, text: "ESA aims to minimize new debris by 2030." },
+  { from: 57.0, to: 60.0, text: "The sky isn't infinite. Don't turn it into a junkyard." },
 ];

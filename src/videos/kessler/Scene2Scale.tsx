@@ -1,11 +1,11 @@
 import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
-import { Earth, StatCard, Tag, clamp, useReveal } from "./parts";
+import { Earth, StatCard, Tag, clamp } from "./parts";
 import { OrbitField, Rings, fmt } from "./orbit";
-import { C, EASE_OUT, FONT } from "./theme";
+import { C, EASE_OUT, W } from "./theme";
 
-const CX = 560;
-const CY = 540;
+const CX = W / 2;
+const CY = 470;
 
 /**
  * Local frame 0 = absolute 153. VO cues (absolute s): 5.3 / 8.0 / 11.0
@@ -13,22 +13,20 @@ const CY = 540;
  */
 export const Scene2Scale: React.FC = () => {
   const frame = useCurrentFrame();
-  const slide = interpolate(frame, [0, 30], [200, 0], { ...clamp, easing: EASE_OUT });
-  // Speed streak across the Earth for the "27.000 km/h" beat.
-  const streak = interpolate(frame, [177, 215], [-600, 2400], clamp);
+  const rise = interpolate(frame, [0, 30], [160, 0], { ...clamp, easing: EASE_OUT });
+  const streak = interpolate(frame, [177, 215], [-700, 1300], clamp);
   const streakOpacity = interpolate(frame, [177, 190, 235, 255], [0, 1, 1, 0], clamp);
-  const bullet = useReveal(210, 20);
 
   return (
     <AbsoluteFill>
-      <div style={{ position: "absolute", inset: 0, translate: `${-slide}px 0` }}>
-        <svg width={1920} height={1080} style={{ position: "absolute" }}>
-          <Rings cx={CX} cy={CY} radii={[340, 420, 500]} />
+      <div style={{ position: "absolute", inset: 0, translate: `0 ${-rise}px` }}>
+        <svg width={1080} height={1920} style={{ position: "absolute" }}>
+          <Rings cx={CX} cy={CY} radii={[330, 410, 490]} />
           <OrbitField
             cx={CX}
             cy={CY}
-            rMin={330}
-            rMax={510}
+            rMin={320}
+            rMax={500}
             count={90}
             color={C.cyan}
             seed="scale-sat"
@@ -40,8 +38,8 @@ export const Scene2Scale: React.FC = () => {
           <OrbitField
             cx={CX}
             cy={CY}
-            rMin={330}
-            rMax={510}
+            rMin={320}
+            rMax={500}
             count={260}
             color={C.magenta}
             seed="scale-d1"
@@ -54,8 +52,8 @@ export const Scene2Scale: React.FC = () => {
           <OrbitField
             cx={CX}
             cy={CY}
-            rMin={320}
-            rMax={520}
+            rMin={310}
+            rMax={510}
             count={520}
             color={C.gold}
             seed="scale-d2"
@@ -66,69 +64,54 @@ export const Scene2Scale: React.FC = () => {
             oneWay={false}
           />
         </svg>
-        <Earth cx={CX} cy={CY} r={250} spin={frame * 0.05} />
+        <Earth cx={CX} cy={CY} r={240} spin={frame * 0.05} />
       </div>
 
-      <Tag text="Vật thể trên quỹ đạo" x={900} y={88} color={C.cyan} />
+      <Tag text="Objects in orbit" x={72} y={90} color={C.cyan} size={44} />
       <StatCard
         from={6}
-        x={1160}
-        y={190}
+        x={90}
+        y={1000}
         value={68450}
         format={fmt}
-        caption="vật thể lớn hơn 10 cm"
+        caption="objects larger than 10 cm"
         color={C.magenta}
-        width={680}
+        width={900}
       />
       <StatCard
         from={87}
-        x={1160}
-        y={440}
+        x={90}
+        y={1205}
         value={1.5}
-        format={(n) => `${(Math.round(n * 10) / 10).toString().replace(".", ",")} triệu`}
-        caption="mảnh vỡ từ 1 – 10 cm"
+        format={(n) => `${(Math.round(n * 10) / 10).toFixed(1)} million`}
+        caption="fragments, 1 – 10 cm"
         color={C.gold}
-        width={680}
+        width={900}
       />
       <StatCard
         from={177}
-        x={1160}
-        y={690}
+        x={90}
+        y={1410}
         value={27000}
         format={(n) => `${fmt(n)} km/h`}
-        caption="tốc độ quỹ đạo"
+        caption="≈ 10× faster than a bullet"
         color={C.cyan}
-        width={680}
+        width={900}
       />
 
-      {/* speed streak */}
+      {/* speed streak across the Earth */}
       <div
         style={{
           position: "absolute",
-          top: 560,
+          top: CY + 30,
           left: streak,
-          width: 520,
+          width: 560,
           height: 10,
           borderRadius: 10,
           background: `linear-gradient(90deg, transparent, ${C.white})`,
           opacity: streakOpacity,
         }}
       />
-      <div
-        style={{
-          position: "absolute",
-          left: 1160,
-          top: 920,
-          fontFamily: FONT,
-          fontWeight: 800,
-          fontSize: 40,
-          color: C.white,
-          opacity: bullet,
-          translate: `0 ${(1 - bullet) * 30}px`,
-        }}
-      >
-        ≈ 10× nhanh hơn viên đạn
-      </div>
     </AbsoluteFill>
   );
 };

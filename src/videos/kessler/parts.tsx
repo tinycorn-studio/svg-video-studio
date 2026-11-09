@@ -104,6 +104,28 @@ export const Sprite: React.FC<{
   />
 );
 
+/** Full-width strip anchored to the bottom edge of the frame. */
+export const Strip: React.FC<{
+  name: string;
+  aspect: number; // width / height of the svg viewBox
+  bottom?: number;
+  translateY?: number;
+  opacity?: number;
+}> = ({ name, aspect, bottom = 0, translateY = 0, opacity = 1 }) => (
+  <Img
+    src={svg(name)}
+    style={{
+      position: "absolute",
+      left: 0,
+      bottom,
+      width: W,
+      height: W / aspect,
+      translate: `0 ${translateY}px`,
+      opacity,
+    }}
+  />
+);
+
 export const Earth: React.FC<{
   cx: number;
   cy: number;
@@ -147,7 +169,7 @@ export const StatCard: React.FC<{
       }}
     >
       <div style={{ fontSize: 96, fontWeight: 800, color, lineHeight: 1.05 }}>
-        {format(Math.round(value * count))}
+        {format(value * count)}
       </div>
       <div style={{ fontSize: 34, fontWeight: 600, color: C.lilac }}>
         {caption}

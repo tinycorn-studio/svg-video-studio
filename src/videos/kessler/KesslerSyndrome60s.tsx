@@ -27,7 +27,7 @@ const Subtitles: React.FC = () => {
         position: "absolute",
         left: 0,
         right: 0,
-        bottom: 64,
+        bottom: 170,
         display: "flex",
         justifyContent: "center",
         opacity: a,
@@ -35,13 +35,13 @@ const Subtitles: React.FC = () => {
     >
       <div
         style={{
-          maxWidth: 1560,
+          maxWidth: 940,
           padding: "14px 36px",
           borderRadius: 30,
           background: "rgba(11,9,43,0.78)",
           fontFamily: FONT,
           fontWeight: 600,
-          fontSize: 46,
+          fontSize: 44,
           lineHeight: 1.3,
           color: C.white,
           textAlign: "center",
@@ -57,8 +57,10 @@ const Credit: React.FC = () => (
   <div
     style={{
       position: "absolute",
-      right: 40,
-      bottom: 18,
+      left: 0,
+      right: 0,
+      textAlign: "center",
+      bottom: 60,
       fontFamily: FONT,
       fontWeight: 600,
       fontSize: 22,
@@ -66,7 +68,7 @@ const Credit: React.FC = () => (
       opacity: 0.6,
     }}
   >
-    Nguồn: ESA Space Environment Report 2026 · ESA DISCOS
+    Source: ESA Space Environment Report 2026 · ESA DISCOS
   </div>
 );
 

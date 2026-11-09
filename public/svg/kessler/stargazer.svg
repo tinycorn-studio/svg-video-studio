@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <defs>
+    <linearGradient id="stargazer-jacket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f72585"/>
+      <stop offset="60%" stop-color="#b5179e"/>
+      <stop offset="100%" stop-color="#7209b7"/>
+    </linearGradient>
+    <linearGradient id="stargazer-jacket-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9d1775"/>
+      <stop offset="100%" stop-color="#480ca8"/>
+    </linearGradient>
+    <linearGradient id="stargazer-jacket-hi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff70a6"/>
+      <stop offset="100%" stop-color="#f72585"/>
+    </linearGradient>
+    <linearGradient id="stargazer-pants" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2060"/>
+      <stop offset="60%" stop-color="#1a1446"/>
+      <stop offset="100%" stop-color="#100b2e"/>
+    </linearGradient>
+    <linearGradient id="stargazer-pants-hi" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3c307e"/>
+      <stop offset="100%" stop-color="#251c54"/>
+    </linearGradient>
+    <linearGradient id="stargazer-hair" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c1a4d"/>
+      <stop offset="60%" stop-color="#190e30"/>
+      <stop offset="100%" stop-color="#0e071c"/>
+    </linearGradient>
+    <linearGradient id="stargazer-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0be84"/>
+      <stop offset="100%" stop-color="#dfa868"/>
+    </linearGradient>
+    <linearGradient id="stargazer-skin-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c98e4f"/>
+      <stop offset="100%" stop-color="#b27539"/>
+    </linearGradient>
+    <linearGradient id="stargazer-shoe" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#282247"/>
+      <stop offset="100%" stop-color="#100d21"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="202" cy="576" rx="74" ry="10" fill="#0b092b" opacity="0.3"/>
+
+  <!-- Shoes & Legs -->
+  <path d="M 152 563 C 151 556 166 553 181 556 C 187 558 189 565 189 570 C 189 574 182 576 172 576 C 158 576 152 571 152 563 Z" fill="url(#stargazer-shoe)"/>
+  <path d="M 153 570 C 158 573 170 575 186 572 C 188 574 183 576 172 576 C 160 576 154 573 153 570 Z" fill="#4361ee" opacity="0.6"/>
+  <path d="M 219 562 C 218 555 233 552 249 554 C 256 556 258 563 258 569 C 258 574 250 576 238 576 C 225 576 219 570 219 562 Z" fill="url(#stargazer-shoe)"/>
+  <path d="M 220 569 C 225 572 238 574 255 571 C 257 573 251 575 238 576 C 227 576 221 572 220 569 Z" fill="#4361ee" opacity="0.6"/>
+
+  <path d="M 156 392 L 195 392 L 187 559 L 154 559 Z" fill="url(#stargazer-pants)"/>
+  <path d="M 156 392 L 176 392 L 171 559 L 154 559 Z" fill="#140f38" opacity="0.75"/>
+  <path d="M 207 392 L 248 392 L 256 558 L 221 558 Z" fill="url(#stargazer-pants-hi)"/>
+  <path d="M 207 392 L 223 392 L 228 558 L 221 558 Z" fill="#140f38" opacity="0.5"/>
+  <path d="M 190 390 Q 202 430 212 390 Z" fill="#140f38" opacity="0.65"/>
+
+  <!-- Torso & Jacket -->
+  <path d="M 148 222 C 132 258 136 338 143 395 C 162 399 242 399 261 395 C 269 338 274 258 258 222 C 238 212 168 212 148 222 Z" fill="url(#stargazer-jacket)"/>
+  <path d="M 148 222 C 132 258 136 338 143 395 C 160 398 190 398 195 395 C 187 340 183 250 190 216 C 172 214 156 217 148 222 Z" fill="url(#stargazer-jacket-dark)"/>
+  <path d="M 235 216 C 248 245 253 325 252 393 C 256 394 259 394 261 395 C 269 338 274 258 258 222 C 251 218 243 216 235 216 Z" fill="url(#stargazer-jacket-hi)" opacity="0.8"/>
+  <path d="M 142 388 C 170 393 234 393 262 388 L 261 397 C 236 401 168 401 143 397 Z" fill="#480ca8" opacity="0.7"/>
+  <path d="M 203 226 C 200 275 200 345 202 388" stroke="#480ca8" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+
+  <!-- Left Arm -->
+  <path d="M 152 224 C 134 235 120 270 120 310 C 120 338 126 376 130 388 C 135 390 144 388 147 384 C 144 365 140 326 142 300 C 144 265 156 238 162 230 Z" fill="url(#stargazer-jacket-dark)"/>
+  <ellipse cx="138" cy="386" rx="9" ry="4" fill="#3a0055"/>
+  <path d="M 132 388 C 130 395 132 404 136 408 C 140 409 144 406 145 398 C 146 393 143 388 139 387 Z" fill="url(#stargazer-skin)"/>
+  <path d="M 132 388 C 130 395 132 404 136 408 C 135 402 134 394 137 387 Z" fill="url(#stargazer-skin-dark)"/>
+
+  <!-- Head & Neck -->
+  <path d="M 189 182 L 217 182 L 219 220 L 187 220 Z" fill="url(#stargazer-skin)"/>
+  <path d="M 189 182 L 202 182 L 200 220 L 187 220 Z" fill="url(#stargazer-skin-dark)"/>
+  <path d="M 174 218 C 188 226 218 226 232 218 C 238 223 234 229 228 231 C 213 236 193 236 178 231 C 172 228 170 222 174 218 Z" fill="#ff5d8f"/>
+  <path d="M 174 218 C 184 223 198 225 204 225 L 204 234 C 193 234 180 231 174 226 Z" fill="#b5179e" opacity="0.6"/>
+
+  <ellipse cx="204" cy="150" rx="38" ry="40" fill="url(#stargazer-hair)"/>
+  <ellipse cx="242" cy="155" rx="6" ry="10" transform="rotate(10 242 155)" fill="url(#stargazer-skin)"/>
+  <ellipse cx="242" cy="155" rx="3" ry="6" transform="rotate(10 242 155)" fill="url(#stargazer-skin-dark)"/>
+  <path d="M 168 152 C 166 120 185 108 214 108 C 242 108 248 126 247 148 C 247 165 240 176 236 182 C 224 186 210 186 198 184 C 184 182 170 172 168 152 Z" fill="url(#stargazer-hair)"/>
+  <path d="M 194 110 C 222 110 244 122 245 142 C 237 132 220 126 196 126 C 182 126 175 130 172 135 C 176 122 184 112 194 110 Z" fill="#480ca8" opacity="0.8"/>
+  <path d="M 215 112 C 234 115 244 126 244 138 C 238 130 228 125 215 125 Z" fill="#ff70a6" opacity="0.45"/>
+  <path d="M 194 180 C 203 186 211 186 220 180 L 217 186 C 210 190 203 190 197 186 Z" fill="#140f38"/>
+
+  <!-- Right Pointing Arm -->
+  <circle cx="264" cy="223" r="17" fill="url(#stargazer-jacket-hi)"/>
+  <path d="M 256 234 L 275 214 L 316 156 C 322 160 324 167 320 174 L 276 242 C 269 243 261 240 256 234 Z" fill="url(#stargazer-jacket)"/>
+  <path d="M 275 214 L 316 156 C 319 160 318 164 314 169 L 273 226 Z" fill="url(#stargazer-jacket-hi)"/>
+  <path d="M 314 162 L 350 106 C 354 109 357 113 355 118 L 319 173 C 315 171 313 167 314 162 Z" fill="url(#stargazer-jacket)"/>
+  <path d="M 314 162 L 350 106 C 352 108 353 110 352 112 L 318 167 Z" fill="url(#stargazer-jacket-hi)"/>
+  <ellipse cx="352" cy="112" rx="7" ry="4" transform="rotate(-55 352 112)" fill="#480ca8"/>
+  <ellipse cx="358" cy="103" rx="7" ry="6" fill="url(#stargazer-skin)"/>
+  <path d="M 353 105 C 352 101 356 98 360 98 C 357 101 356 106 357 108 Z" fill="url(#stargazer-skin-dark)"/>
+  <circle cx="361" cy="104" r="3.5" fill="url(#stargazer-skin-dark)"/>
+  <circle cx="363" cy="99" r="3.2" fill="url(#stargazer-skin)"/>
+  <path d="M 359 98 L 380 66 C 382 63 386 65 385 68 L 365 101 Z" fill="url(#stargazer-skin)"/>
+  <path d="M 360 97 L 380 66 C 381 64 383 65 383 66 L 364 98 Z" fill="#ffd166" opacity="0.6"/>
+</svg>

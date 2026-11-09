@@ -27,6 +27,7 @@
     "d3": "^7.9.2",
     "flubber": "^0.4.2",
     "gsap": "^3.15.1",
+    "hyperframes": "^0.9.26",
     "lucide-react": "^1.70.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
@@ -45,7 +46,11 @@
     "typescript": "5.9.3"
   },
   "scripts": {
-    "dev": "remotion studio",
+    "dev": "hyperframes preview",
+    "hf:preview": "hyperframes preview",
+    "hf:render": "hyperframes render",
+    "hf:check": "hyperframes check",
+    "remotion:dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"

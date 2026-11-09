@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 520">
+  <defs>
+    <linearGradient id="hill-back" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1d1547"/>
+      <stop offset="100%" stop-color="#120c2e"/>
+    </linearGradient>
+    <linearGradient id="hill-mid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#241a54"/>
+      <stop offset="100%" stop-color="#160f38"/>
+    </linearGradient>
+    <linearGradient id="hill-front" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#342875"/>
+      <stop offset="60%" stop-color="#2a2060"/>
+      <stop offset="100%" stop-color="#19123b"/>
+    </linearGradient>
+    <linearGradient id="hill-path" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#463887"/>
+      <stop offset="60%" stop-color="#382c70"/>
+      <stop offset="100%" stop-color="#271d54"/>
+    </linearGradient>
+    <linearGradient id="hill-tree" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2b476e"/>
+      <stop offset="100%" stop-color="#131e3b"/>
+    </linearGradient>
+    <radialGradient id="hill-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd166" stop-opacity="0.7"/>
+      <stop offset="60%" stop-color="#ffb703" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ff7b00" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 1. BACK HILL LAYER (#140f38) -->
+  <path d="M 0 255 C 130 205 200 168 310 168 C 420 168 470 232 580 236 C 690 240 760 162 860 162 C 950 162 1010 200 1080 225 L 1080 520 L 0 520 Z" fill="url(#hill-back)"/>
+  <!-- Back hill subtle rim highlight -->
+  <path d="M 0 255 C 130 205 200 168 310 168 C 420 168 470 232 580 236 C 690 240 760 162 860 162 C 950 162 1010 200 1080 225" stroke="#2c2263" stroke-width="2" fill="none" opacity="0.6"/>
+
+  <!-- Distant House 1 on back hill crest -->
+  <g id="hill-house-1" transform="translate(305, 154)">
+    <circle cx="9" cy="9" r="16" fill="url(#hill-glow)"/>
+    <!-- House body -->
+    <rect x="0" y="7" width="18" height="11" fill="#0d0924"/>
+    <!-- Roof -->
+    <polygon points="-2,7 9,0 20,7" fill="#181035"/>
+    <!-- Tiny chimney -->
+    <rect x="13" y="1" width="3" height="5" fill="#0d0924"/>
+    <!-- Glowing warm window -->
+    <rect x="6" y="9" width="6" height="6" rx="1" fill="#ffd166"/>
+  </g>
+
+  <!-- 2. MID HILL LAYER (#1a1446) -->
+  <path d="M 0 315 C 80 325 150 330 240 310 C 350 285 410 222 510 222 C 620 222 680 292 780 295 C 870 298 960 255 1080 275 L 1080 520 L 0 520 Z" fill="url(#hill-mid)"/>
+  <path d="M 0 315 C 80 325 150 330 240 310 C 350 285 410 222 510 222 C 620 222 680 292 780 295 C 870 298 960 255 1080 275" stroke="#372a73" stroke-width="2.5" fill="none" opacity="0.6"/>
+
+  <!-- Distant House 2 on mid hill -->
+  <g id="hill-house-2" transform="translate(525, 210)">
+    <circle cx="12" cy="12" r="20" fill="url(#hill-glow)"/>
+    <rect x="0" y="8" width="24" height="14" rx="1" fill="#0d0824"/>
+    <polygon points="-2,8 12,0 26,8" fill="#1b123d"/>
+    <rect x="18" y="1" width="3.5" height="6" fill="#0d0824"/>
+    <!-- 2 warm windows -->
+    <rect x="4" y="11" width="6" height="7" rx="1" fill="#ffd166"/>
+    <rect x="14" y="11" width="6" height="7" rx="1" fill="#ffb703"/>
+    <rect x="4" y="11" width="6" height="3" fill="#ffffff" opacity="0.4"/>
+  </g>
+
+  <!-- Distant House 3 on mid-right slope -->
+  <g id="hill-house-3" transform="translate(880, 276)">
+    <circle cx="10" cy="10" r="17" fill="url(#hill-glow)"/>
+    <rect x="0" y="7" width="20" height="12" rx="1" fill="#0d0824"/>
+    <polygon points="-2,7 10,0 22,7" fill="#1b123d"/>
+    <rect x="6" y="9" width="8" height="6" rx="1" fill="#ffd166"/>
+    <rect x="6" y="9" width="4" height="6" fill="#ffffff" opacity="0.3"/>
+  </g>
+
+  <!-- Distant shrub mounds on mid hill -->
+  <ellipse cx="740" cy="296" rx="12" ry="7" fill="#130e33"/>
+  <ellipse cx="752" cy="295" rx="8" ry="5" fill="#130e33"/>
+  <ellipse cx="180" cy="324" rx="14" ry="7" fill="#130e33"/>
+
+  <!-- 3. FRONT HILL LAYER (#2a2060) -->
+  <path d="M 0 380 C 140 375 220 350 360 350 C 500 350 560 305 690 305 C 820 305 930 365 1080 370 L 1080 520 L 0 520 Z" fill="url(#hill-front)"/>
+  <!-- Front hill top rim highlight -->
+  <path d="M 0 380 C 140 375 220 350 360 350 C 500 350 560 305 690 305 C 820 305 930 365 1080 370" stroke="#483991" stroke-width="3" fill="none" opacity="0.7"/>
+
+  <!-- LITTLE WINDING PATH -->
+  <path d="M 460 520 C 475 480 520 445 545 420 C 570 395 620 375 645 350 C 655 340 660 328 666 312 L 678 314 C 672 332 665 345 654 357 C 628 384 577 406 554 430 C 527 458 488 488 476 520 Z" fill="url(#hill-path)"/>
+
+  <!-- Small stones / path highlights -->
+  <ellipse cx="495" cy="485" rx="5" ry="2.5" fill="#5a49a8" opacity="0.5"/>
+  <ellipse cx="538" cy="435" rx="4" ry="2" fill="#5a49a8" opacity="0.5"/>
+  <ellipse cx="610" cy="380" rx="3.5" ry="1.8" fill="#5a49a8" opacity="0.5"/>
+
+  <!-- ONE ROUND TREE (classic Kurzgesagt round puffy tree) -->
+  <g id="hill-round-tree">
+    <!-- Tree shadow on hill -->
+    <ellipse cx="232" cy="378" rx="38" ry="10" fill="#160f36" opacity="0.7"/>
+
+    <!-- Trunk -->
+    <path d="M 226 380 C 226 360 227 340 228 322 L 236 322 C 237 340 238 360 238 380 C 234 381 230 381 226 380 Z" fill="#130b26"/>
+    <!-- Trunk root flare -->
+    <path d="M 223 381 C 226 376 228 372 229 365 L 235 365 C 236 372 238 376 241 381 Z" fill="#130b26"/>
+
+    <!-- Main foliage puffs -->
+    <!-- Dark bottom/shadow puff -->
+    <circle cx="232" cy="308" r="44" fill="#101930"/>
+    <!-- Main volume -->
+    <circle cx="232" cy="304" r="42" fill="url(#hill-tree)"/>
+
+    <!-- Clustered side and top rounded volumes -->
+    <circle cx="210" cy="314" r="26" fill="#1a2b4c"/>
+    <circle cx="254" cy="312" r="25" fill="#243b66"/>
+    <circle cx="232" cy="286" r="28" fill="#2d4978"/>
+
+    <!-- Crescent cel-shading highlight from night sky (top-right) -->
+    <path d="M 216 270 C 228 264 246 266 256 276 C 265 285 268 298 266 308 C 262 297 254 286 242 280 C 230 274 220 274 216 270 Z" fill="#4cc9f0" opacity="0.4"/>
+    <circle cx="242" cy="282" r="14" fill="#4cc9f0" opacity="0.25"/>
+
+    <!-- Small foliage shadow crevices -->
+    <path d="M 218 316 C 224 322 236 322 244 316 C 238 320 226 320 218 316 Z" fill="#0d1426" opacity="0.6"/>
+  </g>
+
+  <!-- Cute small bush near tree -->
+  <ellipse cx="278" cy="364" rx="14" ry="9" fill="#192b4a"/>
+  <ellipse cx="278" cy="362" rx="12" ry="7" fill="#243b66"/>
+  <ellipse cx="282" cy="360" rx="6" ry="4" fill="#4cc9f0" opacity="0.3"/>
+</svg>

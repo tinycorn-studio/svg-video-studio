@@ -86,7 +86,7 @@ export const RemotionRoot: React.FC = () => {
           height={1080}
         />
         <Composition
-          id="Kessler-Syndrome-60s"
+          id="Kessler-Syndrome-60s-Vertical"
           component={KesslerSyndrome60s}
           durationInFrames={TOTAL_FRAMES}
           fps={FPS}

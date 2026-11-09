@@ -4,7 +4,7 @@ import { Sprite, Tag, clamp, useReveal } from "./parts";
 import { C, EASE_OUT, FONT, H, W } from "./theme";
 
 const CX = W / 2;
-const CY = H / 2;
+const CY = 800;
 
 type Target = {
   x: number;
@@ -27,8 +27,8 @@ const buildTargets = (): Target[] => {
   const out: Target[] = [];
   for (let i = 0; i < 6; i++) {
     const a = (i / 6) * Math.PI * 2 + 0.3;
-    const x = CX + Math.cos(a) * 340;
-    const y = CY + Math.sin(a) * 210;
+    const x = CX + Math.cos(a) * 250;
+    const y = CY + Math.sin(a) * 330;
     const hit = T0 + DT1 + i * 2;
     out.push({
       x,
@@ -43,8 +43,8 @@ const buildTargets = (): Target[] => {
     });
     for (let j = 0; j < 2; j++) {
       const b = a + (j === 0 ? -0.32 : 0.32);
-      const x2 = CX + Math.cos(b) * 760;
-      const y2 = CY + Math.sin(b) * 420;
+      const x2 = CX + Math.cos(b) * 470;
+      const y2 = CY + Math.sin(b) * 640;
       out.push({
         x: x2,
         y: y2,
@@ -78,7 +78,7 @@ export const Collision: React.FC<{
   const waveFade = interpolate(t, [0, 36], [0.85, 0], clamp);
   return (
     <>
-      <Sprite name="shockwave" x={x} y={y} size={size * 1.6} scale={wave} opacity={waveFade} />
+      <Sprite name="shockwave" x={x} y={y} size={size * 0.9} scale={wave} opacity={waveFade * 0.55} />
       <Sprite name="burst" x={x} y={y} size={size} scale={pop} opacity={fade} rotate={t * 2} />
       {Array.from({ length: 6 }, (_, k) => {
         const ang = random(`${seed}a${k}`) * Math.PI * 2;
@@ -91,7 +91,7 @@ export const Collision: React.FC<{
             y={y + Math.sin(ang) * sp * t}
             size={size * 0.3}
             rotate={random(`${seed}r${k}`) * 360 + t * (k % 2 ? 6 : -6)}
-            opacity={interpolate(t, [0, 6], [0, 1], clamp)}
+            opacity={interpolate(t, [0, 6, 70, 130], [0, 1, 1, 0], clamp)}
           />
         );
       })}
@@ -113,6 +113,8 @@ export const Scene3Cascade: React.FC = () => {
   const title = useReveal(4, 20);
   const sub = useReveal(20, 20);
   const titleOut = interpolate(frame, [88, 100], [1, 0.0], clamp);
+  const sciIn = interpolate(frame, [0, 22], [0, 1], { ...clamp, easing: EASE_OUT });
+  const sciOut = interpolate(frame, [80, 108], [1, 0], clamp);
 
   return (
     <AbsoluteFill>
@@ -197,22 +199,38 @@ export const Scene3Cascade: React.FC = () => {
         })}
       </div>
 
-      {/* Title block */}
+      {/* 1978: Kessler presents the idea, then steps out as the collision starts */}
       <div
         style={{
           position: "absolute",
-          left: 96,
-          top: 76,
+          inset: 0,
+          opacity: sciIn * sciOut,
+          translate: `0 ${(1 - sciIn) * 120 + (1 - sciOut) * 260}px`,
+        }}
+      >
+        <Sprite name="scientist" x={CX} y={1060} size={900} />
+      </div>
+
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          top: 120,
+          textAlign: "center",
           fontFamily: FONT,
           color: C.white,
           opacity: Math.min(title, titleOut),
           translate: `0 ${(1 - title) * -28}px`,
         }}
       >
-        <div style={{ fontSize: 92, fontWeight: 800, color: C.magenta, lineHeight: 1 }}>
-          HỘI CHỨNG KESSLER
+        <div style={{ fontSize: 96, fontWeight: 800, color: C.magenta, lineHeight: 1 }}>
+          KESSLER
         </div>
-        <div style={{ fontSize: 38, fontWeight: 600, color: C.lilac, marginTop: 10, opacity: sub }}>
+        <div style={{ fontSize: 96, fontWeight: 800, color: C.magenta, lineHeight: 1 }}>
+          SYNDROME
+        </div>
+        <div style={{ fontSize: 40, fontWeight: 600, color: C.lilac, marginTop: 16, opacity: sub }}>
           Donald J. Kessler · NASA · 1978
         </div>
       </div>
@@ -221,17 +239,18 @@ export const Scene3Cascade: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          right: 96,
-          top: 70,
-          textAlign: "right",
+          left: 0,
+          right: 0,
+          top: 90,
+          textAlign: "center",
           fontFamily: FONT,
           opacity: counter,
         }}
       >
-        <div style={{ fontSize: 34, fontWeight: 600, color: C.lilac }}>Số vụ va chạm</div>
+        <div style={{ fontSize: 40, fontWeight: 600, color: C.lilac }}>Collisions</div>
         <div
           style={{
-            fontSize: 130,
+            fontSize: 150,
             fontWeight: 800,
             color: collisions > 1 ? C.gold : C.white,
             lineHeight: 1,
@@ -241,9 +260,9 @@ export const Scene3Cascade: React.FC = () => {
         </div>
       </div>
       <Tag
-        text="Phản ứng dây chuyền"
-        x={96}
-        y={980}
+        text="Chain reaction"
+        x={72}
+        y={330}
         color={C.gold}
         from={T0 + 60}
         size={36}
