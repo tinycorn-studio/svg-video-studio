@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <!-- Frame gradients -->
+    <linearGradient id="d3-g-frame-hi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#b8b5e0"/>
+    </linearGradient>
+    <linearGradient id="d3-g-frame-sh" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8d86c9"/>
+      <stop offset="100%" stop-color="#1a1446"/>
+    </linearGradient>
+
+    <!-- Solar cells gradients (top panel lighter, bottom panel darker due to bend) -->
+    <linearGradient id="d3-g-cell-top" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4cc9f0"/>
+      <stop offset="60%" stop-color="#4361ee"/>
+      <stop offset="100%" stop-color="#1a1446"/>
+    </linearGradient>
+    <linearGradient id="d3-g-cell-bot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4361ee"/>
+      <stop offset="60%" stop-color="#1a1446"/>
+      <stop offset="100%" stop-color="#0b092b"/>
+    </linearGradient>
+
+    <linearGradient id="d3-g-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#ff7b00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Frame backing & bevels -->
+  <!-- Top frame border (highlighted) -->
+  <polygon points="18,22 96,28 92,34 22,27" fill="url(#d3-g-frame-hi)"/>
+  <!-- Left frame border -->
+  <polygon points="18,22 22,27 28,52 22,54" fill="#8d86c9"/>
+  <!-- Right frame border -->
+  <polygon points="96,28 92,34 88,58 94,56" fill="url(#d3-g-frame-sh)"/>
+
+  <!-- Upper solar panel surface plate -->
+  <polygon points="22,27 92,34 88,58 26,52" fill="#1a1446"/>
+
+  <!-- Upper solar cells (3 cells) -->
+  <!-- Cell 1 -->
+  <polygon points="25,29 44,31 43,51 27,49" fill="url(#d3-g-cell-top)"/>
+  <!-- Cell 2 -->
+  <polygon points="47,31 66,33 65,53 46,51" fill="url(#d3-g-cell-top)"/>
+  <!-- Cell 3 -->
+  <polygon points="69,33 89,35 86,55 68,53" fill="url(#d3-g-cell-top)"/>
+
+  <!-- Upper panel grid lines (busbars + fine fingers) -->
+  <line x1="26" y1="40" x2="88" y2="44" stroke="#ffffff" stroke-width="0.8" opacity="0.6"/>
+  <line x1="35" y1="30" x2="35" y2="50" stroke="#4cc9f0" stroke-width="0.6" opacity="0.6"/>
+  <line x1="56" y1="32" x2="55" y2="52" stroke="#4cc9f0" stroke-width="0.6" opacity="0.6"/>
+  <line x1="77" y1="34" x2="76" y2="54" stroke="#4cc9f0" stroke-width="0.6" opacity="0.6"/>
+
+  <!-- Bent fracture crease & exposed copper/gold busbars -->
+  <polygon points="22,51 92,57 88,61 24,56" fill="url(#d3-g-gold)"/>
+
+  <!-- Lower bent frame plate (bent forward towards viewer at different angle) -->
+  <polygon points="24,56 88,61 98,92 32,88" fill="#0b092b"/>
+
+  <!-- Lower solar cells (3 cells, angled into shadow) -->
+  <!-- Cell 4 -->
+  <polygon points="27,58 46,60 50,86 33,85" fill="url(#d3-g-cell-bot)"/>
+  <!-- Cell 5 -->
+  <polygon points="49,60 68,62 72,88 53,87" fill="url(#d3-g-cell-bot)"/>
+  <!-- Cell 6 -->
+  <polygon points="71,62 86,64 92,90 75,89" fill="url(#d3-g-cell-bot)"/>
+
+  <!-- Lower panel grid lines -->
+  <line x1="28" y1="72" x2="89" y2="76" stroke="#4cc9f0" stroke-width="0.8" opacity="0.5"/>
+  <line x1="38" y1="59" x2="42" y2="85" stroke="#4cc9f0" stroke-width="0.6" opacity="0.45"/>
+  <line x1="59" y1="61" x2="63" y2="87" stroke="#4cc9f0" stroke-width="0.6" opacity="0.45"/>
+  <line x1="79" y1="63" x2="84" y2="89" stroke="#4cc9f0" stroke-width="0.6" opacity="0.45"/>
+
+  <!-- Jagged broken frame edge on right & bottom -->
+  <polygon points="86,64 96,62 98,92 92,90" fill="url(#d3-g-frame-sh)"/>
+  <polygon points="32,88 98,92 92,96 28,92" fill="url(#d3-g-frame-sh)"/>
+
+  <!-- Severed gold wire harness curling out -->
+  <path d="M 88,61 Q 104,64 100,74 T 106,86" fill="none" stroke="#ffd166" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="106" cy="86" r="1.5" fill="#ff7b00"/>
+  <path d="M 24,56 Q 16,62 14,72" fill="none" stroke="#ffb703" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- Small shattered glass fragment flying off -->
+  <polygon points="12,38 20,34 16,46" fill="#4cc9f0" opacity="0.85"/>
+  <polygon points="102,32 108,38 104,42" fill="#ffffff" opacity="0.7"/>
+</svg>

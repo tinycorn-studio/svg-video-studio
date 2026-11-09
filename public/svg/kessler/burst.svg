@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <!-- Outer flash radial gradient: magenta to hot-pink to orange -->
+    <radialGradient id="burst-g-outer" cx="200" cy="200" r="190" fx="200" fy="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f72585"/>
+      <stop offset="65%" stop-color="#ff5d8f"/>
+      <stop offset="100%" stop-color="#ff7b00"/>
+    </radialGradient>
+
+    <!-- Middle flash radial gradient: light gold to orange -->
+    <radialGradient id="burst-g-mid" cx="200" cy="200" r="135" fx="200" fy="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="70%" stop-color="#ffb703"/>
+      <stop offset="100%" stop-color="#ff7b00"/>
+    </radialGradient>
+
+    <!-- Inner flash radial gradient: pure white core to light gold -->
+    <radialGradient id="burst-g-inner" cx="200" cy="200" r="75" fx="200" fy="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#ffb703"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 1. Outer 12-point irregular starburst (magenta/orange) -->
+  <polygon points="
+    200,14 217,138 288,54 249,151 341,125 256,186
+    390,200 264,216 342,289 242,242 289,354 218,269
+    200,384 183,262 115,341 152,248 48,288 145,185
+    12,200 136,184 56,110 156,157 110,44 182,132"
+    fill="url(#burst-g-outer)"/>
+
+  <!-- 2. Middle 12-point irregular starburst (gold/orange, interleaved angles) -->
+  <polygon points="
+    231,74 223,160 283,114 243,175 330,165 244,200
+    320,234 242,224 294,292 222,238 228,324 200,248
+    163,329 178,239 112,285 158,225 76,233 156,200
+    78,166 160,177 109,112 176,158 168,71 200,155"
+    fill="url(#burst-g-mid)"/>
+
+  <!-- 3. Inner 12-point starburst (light gold core) -->
+  <polygon points="
+    200,130 206,176 232,145 218,182 262,164 223,194
+    268,200 223,206 264,237 218,218 233,257 206,224
+    200,272 194,224 166,258 182,218 139,235 177,206
+    132,200 177,194 137,164 182,182 167,143 194,176"
+    fill="url(#burst-g-inner)"/>
+
+  <!-- Intense central white flash disc -->
+  <circle cx="200" cy="200" r="22" fill="#ffffff"/>
+
+  <!-- 6 small spark triangles radiating outward -->
+  <!-- Spark 1: Top-right -->
+  <polygon points="295,78 326,50 306,85 292,82" fill="#ffd166"/>
+  <!-- Spark 2: Right -->
+  <polygon points="364,188 395,192 368,202 360,195" fill="#ffffff"/>
+  <!-- Spark 3: Bottom-right -->
+  <polygon points="310,312 334,342 302,328 304,316" fill="#ff5d8f"/>
+  <!-- Spark 4: Bottom-left -->
+  <polygon points="106,316 82,345 98,315 110,308" fill="#ffd166"/>
+  <!-- Spark 5: Left -->
+  <polygon points="38,214 8,208 36,201 42,208" fill="#ffffff"/>
+  <!-- Spark 6: Top-left -->
+  <polygon points="94,84 72,56 102,74 98,88" fill="#ffb703"/>
+</svg>

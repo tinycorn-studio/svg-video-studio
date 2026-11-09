@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="satellite-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166" />
+      <stop offset="50%" stop-color="#ffb703" />
+      <stop offset="100%" stop-color="#ff7b00" />
+    </linearGradient>
+    <linearGradient id="satellite-solar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4361ee" />
+      <stop offset="60%" stop-color="#2a3a99" />
+      <stop offset="100%" stop-color="#1a1446" />
+    </linearGradient>
+    <linearGradient id="satellite-dish" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#b8b5e0" />
+      <stop offset="100%" stop-color="#8d86c9" />
+    </linearGradient>
+    <clipPath id="satellite-left-panel-clip">
+      <rect x="15" y="145" width="100" height="110" rx="6" />
+    </clipPath>
+    <clipPath id="satellite-right-panel-clip">
+      <rect x="285" y="145" width="100" height="110" rx="6" />
+    </clipPath>
+    <clipPath id="satellite-body-clip">
+      <rect x="150" y="150" width="100" height="100" rx="10" />
+    </clipPath>
+  </defs>
+  <rect x="115" y="196" width="35" height="8" rx="3" fill="#8d86c9" />
+  <circle cx="115" cy="200" r="6" fill="#b8b5e0" />
+  <circle cx="150" cy="200" r="5" fill="#8d86c9" />
+  <rect x="250" y="196" width="35" height="8" rx="3" fill="#8d86c9" />
+  <circle cx="285" cy="200" r="6" fill="#b8b5e0" />
+  <circle cx="250" cy="200" r="5" fill="#8d86c9" />
+  <g clip-path="url(#satellite-left-panel-clip)">
+    <rect x="15" y="145" width="100" height="110" rx="6" fill="url(#satellite-solar)" />
+    <line x1="48" y1="145" x2="48" y2="255" stroke="#4cc9f0" stroke-width="1.5" opacity="0.5" />
+    <line x1="81" y1="145" x2="81" y2="255" stroke="#4cc9f0" stroke-width="1.5" opacity="0.5" />
+    <line x1="15" y1="181" x2="115" y2="181" stroke="#4cc9f0" stroke-width="1.5" opacity="0.5" />
+    <line x1="15" y1="218" x2="115" y2="218" stroke="#4cc9f0" stroke-width="1.5" opacity="0.5" />
+    <polygon points="15,145 60,145 15,190" fill="#ffffff" opacity="0.12" />
+    <polygon points="45,145 105,145 15,235 15,175" fill="#ffffff" opacity="0.08" />
+  </g>
+  <rect x="15" y="145" width="100" height="110" rx="6" fill="none" stroke="#b8b5e0" stroke-width="2" opacity="0.4" />
+  <g clip-path="url(#satellite-right-panel-clip)">
+    <rect x="285" y="145" width="100" height="110" rx="6" fill="url(#satellite-solar)" />
+    <line x1="318" y1="145" x2="318" y2="255" stroke="#4cc9f0" stroke-width="1.5" opacity="0.5" />
+    <line x1="351" y1="145" x2="351" y2="255" stroke="#4cc9f0" stroke-width="1.5" opacity="0.5" />
+    <line x1="285" y1="181" x2="385" y2="181" stroke="#4cc9f0" stroke-width="1.5" opacity="0.5" />
+    <line x1="285" y1="218" x2="385" y2="218" stroke="#4cc9f0" stroke-width="1.5" opacity="0.5" />
+    <polygon points="285,145 330,145 285,190" fill="#ffffff" opacity="0.12" />
+    <polygon points="315,145 375,145 285,235 285,175" fill="#ffffff" opacity="0.08" />
+  </g>
+  <rect x="285" y="145" width="100" height="110" rx="6" fill="none" stroke="#b8b5e0" stroke-width="2" opacity="0.4" />
+  <rect x="197" y="105" width="6" height="45" fill="#8d86c9" rx="2" />
+  <ellipse cx="200" cy="105" rx="5" ry="3" fill="#b8b5e0" />
+  <path d="M 160 85 C 160 112 240 112 240 85 Z" fill="#8d86c9" />
+  <ellipse cx="200" cy="85" rx="40" ry="14" fill="url(#satellite-dish)" />
+  <ellipse cx="200" cy="87" rx="33" ry="10" fill="#b8b5e0" opacity="0.6" />
+  <line x1="200" y1="85" x2="200" y2="60" stroke="#8d86c9" stroke-width="2.5" />
+  <polygon points="185,85 200,60 215,85" fill="none" stroke="#8d86c9" stroke-width="1" opacity="0.4" />
+  <circle cx="200" cy="60" r="4" fill="#ffd166" />
+  <polygon points="144,158 150,154 150,166" fill="#8d86c9" />
+  <polygon points="144,242 150,234 150,246" fill="#8d86c9" />
+  <polygon points="256,158 250,154 250,166" fill="#8d86c9" />
+  <polygon points="256,242 250,234 250,246" fill="#8d86c9" />
+  <rect x="150" y="150" width="100" height="100" rx="10" fill="url(#satellite-gold)" />
+  <g clip-path="url(#satellite-body-clip)">
+    <polygon points="150,250 250,250 250,150 220,180 180,220" fill="#ff7b00" opacity="0.45" />
+    <polygon points="150,250 250,250 210,210" fill="#0b092b" opacity="0.2" />
+    <polygon points="150,150 210,150 180,200 150,180" fill="#ffd166" opacity="0.35" />
+    <polygon points="210,150 250,150 220,200 180,200" fill="#ffb703" opacity="0.3" />
+    <polygon points="150,180 180,200 160,250 150,250" fill="#ff7b00" opacity="0.25" />
+    <polygon points="180,200 220,200 220,250 160,250" fill="#ffb703" opacity="0.2" />
+    <line x1="150" y1="180" x2="220" y2="200" stroke="#ffd166" stroke-width="1" opacity="0.6" />
+    <line x1="180" y1="150" x2="180" y2="250" stroke="#ff7b00" stroke-width="1" opacity="0.4" />
+    <line x1="210" y1="150" x2="160" y2="250" stroke="#0b092b" stroke-width="1" opacity="0.2" />
+    <path d="M 150 230 L 150 160 Q 150 150 160 150 L 230 150" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.5" />
+  </g>
+  <rect x="185" y="185" width="30" height="30" rx="4" fill="#1a1446" opacity="0.25" />
+  <circle cx="200" cy="200" r="8" fill="#ffd166" opacity="0.7" />
+  <circle cx="200" cy="200" r="5" fill="#1a1446" />
+  <circle cx="232" cy="168" r="7" fill="#4cc9f0" opacity="0.35" />
+  <circle cx="232" cy="168" r="3.5" fill="#4cc9f0" />
+  <circle cx="232" cy="168" r="1.5" fill="#ffffff" />
+</svg>

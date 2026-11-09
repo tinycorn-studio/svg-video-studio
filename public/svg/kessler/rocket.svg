@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 500">
+  <defs>
+    <linearGradient id="rocket-nose" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff5d8f" />
+      <stop offset="40%" stop-color="#f72585" />
+      <stop offset="100%" stop-color="#7209b7" />
+    </linearGradient>
+    <linearGradient id="rocket-body-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#f0effa" />
+      <stop offset="100%" stop-color="#b8b5e0" />
+    </linearGradient>
+    <linearGradient id="rocket-window" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4cc9f0" />
+      <stop offset="50%" stop-color="#4361ee" />
+      <stop offset="100%" stop-color="#1a1446" />
+    </linearGradient>
+    <linearGradient id="rocket-fin-left" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5d8f" />
+      <stop offset="100%" stop-color="#f72585" />
+    </linearGradient>
+    <linearGradient id="rocket-fin-right" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f72585" />
+      <stop offset="100%" stop-color="#7209b7" />
+    </linearGradient>
+    <linearGradient id="rocket-flame-outer" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff7b00" />
+      <stop offset="70%" stop-color="#f72585" />
+      <stop offset="100%" stop-color="#7209b7" />
+    </linearGradient>
+    <linearGradient id="rocket-flame-mid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166" />
+      <stop offset="60%" stop-color="#ffb703" />
+      <stop offset="100%" stop-color="#ff7b00" />
+    </linearGradient>
+    <clipPath id="rocket-body-clip">
+      <rect x="65" y="125" width="70" height="205" rx="2" />
+    </clipPath>
+  </defs>
+  <ellipse cx="100" cy="410" rx="36" ry="60" fill="#ff7b00" opacity="0.22" />
+  <g>
+    <path d="M 76 352 C 65 375 64 405 76 430 C 84 445 94 460 100 468 C 106 460 116 445 124 430 C 136 405 135 375 124 352 Z" fill="url(#rocket-flame-outer)" />
+    <path d="M 82 352 C 74 372 75 398 84 416 C 90 426 96 436 100 442 C 104 436 110 426 116 416 C 125 398 126 372 118 352 Z" fill="url(#rocket-flame-mid)" />
+    <path d="M 90 352 C 86 366 87 384 92 396 C 95 402 98 408 100 412 C 102 408 105 402 108 396 C 113 384 114 366 110 352 Z" fill="#ffffff" />
+    <circle cx="100" cy="478" r="3.5" fill="#ff7b00" />
+    <circle cx="100" cy="478" r="1.8" fill="#ffd166" />
+    <circle cx="100" cy="488" r="2" fill="#f72585" opacity="0.8" />
+  </g>
+  <path d="M 65 260 C 55 285 38 315 28 335 C 34 340 45 338 52 334 L 65 324 Z" fill="url(#rocket-fin-left)" />
+  <path d="M 65 260 C 55 285 38 315 28 335 C 32 332 42 315 52 290 L 65 260 Z" fill="#ffffff" opacity="0.3" />
+  <path d="M 135 260 C 145 285 162 315 172 335 C 166 340 155 338 148 334 L 135 324 Z" fill="url(#rocket-fin-right)" />
+  <path d="M 135 324 L 148 334 C 155 338 166 340 172 335 C 160 330 148 326 135 324 Z" fill="#0b092b" opacity="0.3" />
+  <polygon points="68,330 132,330 126,342 74,342" fill="#8d86c9" />
+  <path d="M 80 342 L 76 355 L 124 355 L 120 342 Z" fill="#1a1446" />
+  <ellipse cx="100" cy="355" rx="24" ry="4" fill="#ffd166" />
+  <rect x="65" y="125" width="70" height="205" fill="url(#rocket-body-grad)" />
+  <g clip-path="url(#rocket-body-clip)">
+    <rect x="65" y="125" width="14" height="205" fill="#ffffff" opacity="0.8" />
+    <rect x="117" y="125" width="18" height="205" fill="#0b092b" opacity="0.2" />
+    <line x1="65" y1="215" x2="135" y2="215" stroke="#8d86c9" stroke-width="1.5" opacity="0.4" />
+    <line x1="65" y1="275" x2="135" y2="275" stroke="#8d86c9" stroke-width="1.5" opacity="0.4" />
+    <rect x="99" y="275" width="2" height="55" fill="#b8b5e0" />
+    <rect x="85" y="315" width="6" height="4" fill="#ff7b00" opacity="0.7" />
+    <rect x="94" y="315" width="6" height="4" fill="#ff7b00" opacity="0.7" />
+    <rect x="103" y="315" width="6" height="4" fill="#ff7b00" opacity="0.7" />
+  </g>
+  <g>
+    <circle cx="100" cy="180" r="19" fill="#8d86c9" />
+    <circle cx="100" cy="180" r="18" fill="#b8b5e0" />
+    <circle cx="100" cy="180" r="15" fill="#1a1446" />
+    <circle cx="100" cy="180" r="14" fill="url(#rocket-window)" />
+    <path d="M 90 174 A 11 11 0 0 1 106 169 A 14 14 0 0 0 88 181 A 11 11 0 0 1 90 174 Z" fill="#ffffff" opacity="0.85" />
+    <circle cx="107" cy="188" r="2" fill="#ffffff" opacity="0.5" />
+  </g>
+  <g>
+    <path d="M 100 35 C 95 65 75 98 65 125 L 135 125 C 125 98 105 65 100 35 Z" fill="url(#rocket-nose)" />
+    <path d="M 100 35 C 96 65 82 98 75 125 L 65 125 C 75 98 95 65 100 35 Z" fill="#ffffff" opacity="0.32" />
+    <path d="M 100 35 C 105 65 120 98 126 125 L 135 125 C 125 98 105 65 100 35 Z" fill="#0b092b" opacity="0.25" />
+    <ellipse cx="100" cy="37" rx="3" ry="2" fill="#ffffff" opacity="0.6" />
+    <line x1="65" y1="125" x2="135" y2="125" stroke="#7209b7" stroke-width="2" />
+  </g>
+</svg>

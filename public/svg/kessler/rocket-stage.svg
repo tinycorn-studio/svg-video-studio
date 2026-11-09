@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 500">
+  <defs>
+    <linearGradient id="rocket-stage-body" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="25%" stop-color="#b8b5e0" />
+      <stop offset="75%" stop-color="#8d86c9" />
+      <stop offset="100%" stop-color="#1a1446" />
+    </linearGradient>
+    <linearGradient id="rocket-stage-band" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff5d8f" />
+      <stop offset="40%" stop-color="#f72585" />
+      <stop offset="100%" stop-color="#7209b7" />
+    </linearGradient>
+    <linearGradient id="rocket-stage-nozzle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8d86c9" />
+      <stop offset="35%" stop-color="#3d376d" />
+      <stop offset="100%" stop-color="#1a1446" />
+    </linearGradient>
+    <clipPath id="rocket-stage-clip">
+      <path d="M 58 95 L 142 95 L 142 385 L 58 385 Z" />
+    </clipPath>
+  </defs>
+  <g>
+    <ellipse cx="100" cy="85" rx="36" ry="18" fill="#1a1446" />
+    <ellipse cx="100" cy="80" rx="30" ry="14" fill="#3d376d" />
+    <polygon points="66,55 134,55 142,95 58,95" fill="#8d86c9" opacity="0.85" />
+    <rect x="74" y="66" width="10" height="18" rx="2" fill="#1a1446" />
+    <rect x="95" y="66" width="10" height="18" rx="2" fill="#1a1446" />
+    <rect x="116" y="66" width="10" height="18" rx="2" fill="#1a1446" />
+    <ellipse cx="100" cy="55" rx="34" ry="7" fill="#b8b5e0" />
+    <ellipse cx="100" cy="55" rx="28" ry="5" fill="#1a1446" />
+  </g>
+  <rect x="58" y="95" width="84" height="290" fill="url(#rocket-stage-body)" />
+  <g clip-path="url(#rocket-stage-clip)">
+    <rect x="58" y="95" width="16" height="290" fill="#ffffff" opacity="0.35" />
+    <rect x="122" y="95" width="20" height="290" fill="#0b092b" opacity="0.35" />
+    <rect x="58" y="140" width="84" height="40" fill="url(#rocket-stage-band)" />
+    <rect x="58" y="140" width="16" height="40" fill="#ffffff" opacity="0.3" />
+    <rect x="122" y="140" width="20" height="40" fill="#0b092b" opacity="0.3" />
+    <line x1="58" y1="140" x2="142" y2="140" stroke="#ff5d8f" stroke-width="2" />
+    <line x1="58" y1="180" x2="142" y2="180" stroke="#7209b7" stroke-width="2" />
+    <line x1="58" y1="215" x2="142" y2="215" stroke="#1a1446" stroke-width="1.5" opacity="0.4" />
+    <line x1="58" y1="285" x2="142" y2="285" stroke="#1a1446" stroke-width="1.5" opacity="0.4" />
+    <line x1="58" y1="340" x2="142" y2="340" stroke="#1a1446" stroke-width="1.5" opacity="0.4" />
+    <rect x="96" y="95" width="6" height="290" fill="#b8b5e0" />
+    <rect x="99" y="95" width="3" height="290" fill="#8d86c9" />
+    <polygon points="142,240 126,252 128,272 142,282" fill="#1a1446" opacity="0.6" />
+    <polygon points="142,240 126,252 135,260" fill="#0b092b" opacity="0.7" />
+    <line x1="142" y1="240" x2="126" y2="252" stroke="#ff5d8f" stroke-width="1.5" opacity="0.6" />
+    <line x1="126" y1="252" x2="128" y2="272" stroke="#ffffff" stroke-width="1" opacity="0.5" />
+    <line x1="128" y1="272" x2="142" y2="282" stroke="#0b092b" stroke-width="1.5" opacity="0.5" />
+    <ellipse cx="78" cy="235" rx="5" ry="3" fill="#1a1446" />
+    <ellipse cx="77" cy="234" rx="2.5" ry="1.5" fill="#0b092b" />
+    <circle cx="76" cy="233" r="0.8" fill="#ffffff" />
+    <line x1="72" y1="238" x2="84" y2="232" stroke="#ffffff" stroke-width="0.8" opacity="0.5" />
+    <ellipse cx="85" cy="310" rx="4" ry="2" fill="#1a1446" />
+    <circle cx="84" cy="309" r="1" fill="#ffffff" />
+  </g>
+  <polygon points="54,115 58,110 58,120" fill="#1a1446" />
+  <polygon points="54,365 58,360 58,370" fill="#1a1446" />
+  <polygon points="146,115 142,110 142,120" fill="#1a1446" />
+  <polygon points="146,365 142,360 142,370" fill="#1a1446" />
+  <polygon points="58,385 142,385 136,410 64,410" fill="#8d86c9" />
+  <line x1="64" y1="410" x2="136" y2="410" stroke="#1a1446" stroke-width="2" />
+  <line x1="82" y1="410" x2="88" y2="425" stroke="#1a1446" stroke-width="3" />
+  <line x1="118" y1="410" x2="112" y2="425" stroke="#1a1446" stroke-width="3" />
+  <g>
+    <path d="M 86 410 C 86 422 68 448 68 455 L 132 455 C 132 448 114 422 114 410 Z" fill="url(#rocket-stage-nozzle)" />
+    <path d="M 83 425 C 88 428 112 428 117 425" fill="none" stroke="#b8b5e0" stroke-width="1.5" opacity="0.6" />
+    <path d="M 75 440 C 82 444 118 444 125 440" fill="none" stroke="#b8b5e0" stroke-width="1.5" opacity="0.6" />
+    <ellipse cx="100" cy="455" rx="32" ry="9" fill="#0b092b" />
+    <ellipse cx="100" cy="454" rx="25" ry="6" fill="#1a1446" />
+    <ellipse cx="100" cy="453" rx="16" ry="3.5" fill="#0b092b" />
+    <path d="M 86 410 C 86 422 68 448 68 455 C 74 455 82 445 84 425 C 86 415 88 410 86 410 Z" fill="#ffffff" opacity="0.2" />
+    <path d="M 114 410 C 114 422 132 448 132 455 C 126 455 118 445 116 425 C 114 415 112 410 114 410 Z" fill="#0b092b" opacity="0.45" />
+  </g>
+</svg>

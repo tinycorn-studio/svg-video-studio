@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="d4-g-light" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#b8b5e0"/>
+    </linearGradient>
+    <linearGradient id="d4-g-mid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b8b5e0"/>
+      <stop offset="100%" stop-color="#8d86c9"/>
+    </linearGradient>
+    <linearGradient id="d4-g-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1446"/>
+      <stop offset="100%" stop-color="#0b092b"/>
+    </linearGradient>
+    <linearGradient id="d4-g-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#ffb703"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sheared upper mounting flange (top-left) -->
+  <ellipse cx="32" cy="25" rx="14" ry="8" transform="rotate(-30 32 25)" fill="#8d86c9"/>
+  <ellipse cx="32" cy="25" rx="11" ry="5.5" transform="rotate(-30 32 25)" fill="#1a1446"/>
+  <ellipse cx="32" cy="25" rx="6" ry="3" transform="rotate(-30 32 25)" fill="#0b092b"/>
+  <polygon points="20,18 25,14 28,19" fill="#ffd166"/>
+
+  <!-- Upper twisted strut segment -->
+  <!-- Shadow plane -->
+  <polygon points="26,30 40,36 68,64 56,66" fill="url(#d4-g-dark)"/>
+  <!-- Mid plane -->
+  <polygon points="32,24 48,32 74,58 68,64" fill="url(#d4-g-mid)"/>
+  <!-- Highlight plane -->
+  <polygon points="38,20 54,26 80,52 74,58" fill="url(#d4-g-light)"/>
+
+  <!-- Magenta warning band / identification stripe wrapped around strut -->
+  <polygon points="46,36 56,42 53,46 43,40" fill="#f72585"/>
+  <polygon points="56,42 62,40 59,44 53,46" fill="#ff5d8f"/>
+
+  <!-- Gold structural hinge / knuckle joint at twist apex -->
+  <circle cx="68" cy="62" r="9" fill="url(#d4-g-gold)"/>
+  <circle cx="68" cy="62" r="5" fill="#1a1446"/>
+  <circle cx="68" cy="62" r="2" fill="#ffd166"/>
+
+  <!-- Lower sheared strut segment (twisted sharply toward bottom-right) -->
+  <!-- Highlight facet -->
+  <polygon points="72,66 94,84 90,90 70,72" fill="url(#d4-g-light)"/>
+  <!-- Shadow facet -->
+  <polygon points="70,72 90,90 84,98 64,74" fill="url(#d4-g-dark)"/>
+
+  <!-- Crimped & ripped jagged teeth at lower rupture (bottom-right) -->
+  <polygon points="94,84 102,88 98,92 106,96 96,100 84,98 90,90" fill="#ffd166"/>
+  <polygon points="98,92 106,96 102,102 96,100" fill="#ff7b00"/>
+  <polygon points="84,98 96,100 90,104 82,101" fill="#1a1446"/>
+
+  <!-- Peeled gold hydraulic line dangling loose -->
+  <path d="M 44,38 Q 30,52 38,68 T 52,78" fill="none" stroke="#ffd166" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="52" cy="78" r="1.6" fill="#ff7b00"/>
+
+  <!-- Small sheared bolt / metal shard floating nearby -->
+  <circle cx="98" cy="72" r="2.2" fill="#b8b5e0"/>
+  <polygon points="18,52 24,56 19,60" fill="#4361ee"/>
+</svg>

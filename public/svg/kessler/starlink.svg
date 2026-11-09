@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="starlink-body" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#b8b5e0" />
+      <stop offset="100%" stop-color="#8d86c9" />
+    </linearGradient>
+    <linearGradient id="starlink-solar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2a3a99" />
+      <stop offset="40%" stop-color="#4361ee" />
+      <stop offset="100%" stop-color="#1a1446" />
+    </linearGradient>
+    <clipPath id="starlink-solar-clip">
+      <rect x="155" y="140" width="210" height="120" rx="4" />
+    </clipPath>
+    <clipPath id="starlink-body-clip">
+      <rect x="40" y="110" width="85" height="180" rx="6" />
+    </clipPath>
+  </defs>
+  <g>
+    <rect x="125" y="194" width="30" height="12" rx="3" fill="#8d86c9" />
+    <circle cx="132" cy="200" r="6" fill="#b8b5e0" />
+    <circle cx="148" cy="200" r="6" fill="#b8b5e0" />
+    <circle cx="132" cy="200" r="3" fill="#1a1446" />
+    <circle cx="148" cy="200" r="3" fill="#1a1446" />
+    <line x1="125" y1="186" x2="155" y2="175" stroke="#8d86c9" stroke-width="2" />
+    <line x1="125" y1="214" x2="155" y2="225" stroke="#8d86c9" stroke-width="2" />
+  </g>
+  <g clip-path="url(#starlink-solar-clip)">
+    <rect x="155" y="140" width="210" height="120" rx="4" fill="url(#starlink-solar)" />
+    <line x1="197" y1="140" x2="197" y2="260" stroke="#4cc9f0" stroke-width="2" opacity="0.65" />
+    <line x1="239" y1="140" x2="239" y2="260" stroke="#4cc9f0" stroke-width="2" opacity="0.65" />
+    <line x1="281" y1="140" x2="281" y2="260" stroke="#4cc9f0" stroke-width="2" opacity="0.65" />
+    <line x1="323" y1="140" x2="323" y2="260" stroke="#4cc9f0" stroke-width="2" opacity="0.65" />
+    <line x1="155" y1="164" x2="365" y2="164" stroke="#4cc9f0" stroke-width="1" opacity="0.4" />
+    <line x1="155" y1="188" x2="365" y2="188" stroke="#4cc9f0" stroke-width="1" opacity="0.4" />
+    <line x1="155" y1="212" x2="365" y2="212" stroke="#4cc9f0" stroke-width="1" opacity="0.4" />
+    <line x1="155" y1="236" x2="365" y2="236" stroke="#4cc9f0" stroke-width="1" opacity="0.4" />
+    <polygon points="155,140 230,140 155,215" fill="#ffffff" opacity="0.1" />
+    <polygon points="205,140 310,140 190,260 155,260" fill="#ffffff" opacity="0.06" />
+    <rect x="155" y="254" width="210" height="6" fill="#0b092b" opacity="0.35" />
+  </g>
+  <rect x="155" y="140" width="210" height="120" rx="4" fill="none" stroke="#8d86c9" stroke-width="2" opacity="0.5" />
+  <g clip-path="url(#starlink-body-clip)">
+    <rect x="40" y="110" width="85" height="180" rx="6" fill="url(#starlink-body)" />
+    <line x1="57" y1="120" x2="57" y2="280" stroke="#8d86c9" stroke-width="1" opacity="0.4" />
+    <line x1="74" y1="120" x2="74" y2="280" stroke="#8d86c9" stroke-width="1" opacity="0.4" />
+    <line x1="91" y1="120" x2="91" y2="280" stroke="#8d86c9" stroke-width="1" opacity="0.4" />
+    <line x1="108" y1="120" x2="108" y2="280" stroke="#8d86c9" stroke-width="1" opacity="0.4" />
+    <line x1="45" y1="135" x2="120" y2="135" stroke="#8d86c9" stroke-width="1" opacity="0.35" />
+    <line x1="45" y1="160" x2="120" y2="160" stroke="#8d86c9" stroke-width="1" opacity="0.35" />
+    <line x1="45" y1="185" x2="120" y2="185" stroke="#8d86c9" stroke-width="1" opacity="0.35" />
+    <line x1="45" y1="210" x2="120" y2="210" stroke="#8d86c9" stroke-width="1" opacity="0.35" />
+    <line x1="45" y1="235" x2="120" y2="235" stroke="#8d86c9" stroke-width="1" opacity="0.35" />
+    <line x1="45" y1="260" x2="120" y2="260" stroke="#8d86c9" stroke-width="1" opacity="0.35" />
+    <rect x="40" y="110" width="6" height="180" fill="#ffffff" opacity="0.7" />
+    <rect x="119" y="110" width="6" height="180" fill="#0b092b" opacity="0.25" />
+    <rect x="40" y="284" width="85" height="6" fill="#0b092b" opacity="0.2" />
+  </g>
+  <rect x="40" y="110" width="85" height="180" rx="6" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.6" />
+  <circle cx="82" cy="148" r="9" fill="#1a1446" />
+  <circle cx="82" cy="148" r="6" fill="#4361ee" />
+  <circle cx="80" cy="146" r="2" fill="#ffffff" />
+  <rect x="76" y="99" width="12" height="11" rx="2" fill="#8d86c9" />
+  <circle cx="82" cy="99" r="6" fill="#4cc9f0" opacity="0.35" />
+  <circle cx="82" cy="99" r="3" fill="#4cc9f0" />
+  <circle cx="82" cy="99" r="1.5" fill="#ffffff" />
+  <polygon points="73,290 91,290 88,300 76,300" fill="#1a1446" />
+  <ellipse cx="82" cy="303" rx="7" ry="4" fill="#4cc9f0" opacity="0.35" />
+  <ellipse cx="82" cy="302" rx="3.5" ry="2" fill="#4cc9f0" />
+  <circle cx="82" cy="301" r="1" fill="#ffffff" />
+</svg>

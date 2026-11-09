@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="earth-ocean" cx="36%" cy="32%" r="72%">
+      <stop offset="0%" stop-color="#4cc9f0" />
+      <stop offset="45%" stop-color="#4361ee" />
+      <stop offset="100%" stop-color="#1a1446" />
+    </radialGradient>
+    <linearGradient id="earth-land" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4cc9f0" />
+      <stop offset="70%" stop-color="#2ec4b6" />
+      <stop offset="100%" stop-color="#1b9aaa" />
+    </linearGradient>
+    <clipPath id="earth-disc-clip">
+      <circle cx="400" cy="400" r="380" />
+    </clipPath>
+  </defs>
+  <circle cx="400" cy="400" r="394" fill="none" stroke="#4cc9f0" stroke-width="6" opacity="0.16" />
+  <circle cx="400" cy="400" r="386" fill="none" stroke="#4cc9f0" stroke-width="4" opacity="0.32" />
+  <g clip-path="url(#earth-disc-clip)">
+    <circle cx="400" cy="400" r="380" fill="url(#earth-ocean)" />
+    <g>
+      <path d="M 180 230 C 195 195 240 160 300 160 C 350 160 380 185 365 220 C 355 245 375 260 365 285 C 350 310 355 335 340 355 C 330 370 315 360 305 345 C 295 330 280 345 270 370 C 255 405 235 435 220 440 C 205 440 210 415 220 395 C 230 370 215 340 195 315 C 180 290 170 260 180 230 Z" fill="#ffffff" opacity="0.3" transform="translate(-4, -4)" />
+      <path d="M 180 230 C 195 195 240 160 300 160 C 350 160 380 185 365 220 C 355 245 375 260 365 285 C 350 310 355 335 340 355 C 330 370 315 360 305 345 C 295 330 280 345 270 370 C 255 405 235 435 220 440 C 205 440 210 415 220 395 C 230 370 215 340 195 315 C 180 290 170 260 180 230 Z" fill="url(#earth-land)" />
+      <path d="M 335 320 C 350 325 360 340 350 360 C 342 368 335 355 335 340 Z" fill="url(#earth-land)" />
+      <path d="M 380 115 C 425 105 450 135 435 165 C 420 185 390 180 375 160 C 365 145 365 125 380 115 Z" fill="#ffffff" opacity="0.3" transform="translate(-3, -3)" />
+      <path d="M 380 115 C 425 105 450 135 435 165 C 420 185 390 180 375 160 C 365 145 365 125 380 115 Z" fill="url(#earth-land)" />
+      <path d="M 260 440 C 305 430 355 460 375 510 C 390 550 370 605 340 655 C 315 695 295 725 285 715 C 275 700 280 660 275 625 C 270 585 250 545 240 505 C 235 470 240 445 260 440 Z" fill="#ffffff" opacity="0.3" transform="translate(-4, -4)" />
+      <path d="M 260 440 C 305 430 355 460 375 510 C 390 550 370 605 340 655 C 315 695 295 725 285 715 C 275 700 280 660 275 625 C 270 585 250 545 240 505 C 235 470 240 445 260 440 Z" fill="url(#earth-land)" />
+      <circle cx="320" cy="390" r="8" fill="url(#earth-land)" />
+      <circle cx="340" cy="405" r="7" fill="url(#earth-land)" />
+      <circle cx="360" cy="425" r="9" fill="url(#earth-land)" />
+      <path d="M 470 170 C 510 160 545 185 535 220 C 520 245 490 245 475 225 C 465 205 460 185 470 170 Z" fill="url(#earth-land)" />
+      <ellipse cx="445" cy="180" rx="14" ry="20" transform="rotate(-20 445 180)" fill="url(#earth-land)" />
+      <path d="M 475 270 C 530 265 580 300 595 355 C 605 410 580 465 545 505 C 515 530 485 515 480 475 C 475 425 450 380 460 325 C 465 295 468 275 475 270 Z" fill="#ffffff" opacity="0.3" transform="translate(-4, -4)" />
+      <path d="M 475 270 C 530 265 580 300 595 355 C 605 410 580 465 545 505 C 515 530 485 515 480 475 C 475 425 450 380 460 325 C 465 295 468 275 475 270 Z" fill="url(#earth-land)" />
+    </g>
+    <g fill="#ffffff">
+      <path d="M 150 175 C 170 155 220 155 240 175 C 255 190 245 205 225 205 C 200 205 190 215 170 215 C 150 215 140 195 150 175 Z" opacity="0.8" />
+      <ellipse cx="190" cy="170" rx="28" ry="16" opacity="0.65" />
+      <path d="M 330 240 C 355 225 410 225 435 245 C 445 260 435 275 415 275 C 390 275 380 285 360 285 C 340 285 320 265 330 240 Z" opacity="0.75" />
+      <ellipse cx="375" cy="240" rx="35" ry="18" opacity="0.6" />
+      <path d="M 270 340 C 290 330 340 330 355 345 C 365 355 355 365 340 365 C 320 365 315 375 295 375 C 275 375 265 355 270 340 Z" opacity="0.7" />
+      <path d="M 230 520 C 250 505 295 505 315 520 C 325 530 315 545 295 545 C 280 545 270 555 250 555 C 230 555 220 540 230 520 Z" opacity="0.7" />
+      <path d="M 260 630 C 290 610 380 615 410 635 C 425 650 410 665 385 665 C 355 665 340 680 315 680 C 285 680 250 655 260 630 Z" opacity="0.75" />
+      <ellipse cx="330" cy="635" rx="45" ry="20" opacity="0.55" />
+      <ellipse cx="205" cy="280" rx="22" ry="10" opacity="0.6" />
+      <ellipse cx="440" cy="380" rx="30" ry="12" opacity="0.65" />
+      <ellipse cx="480" cy="460" rx="25" ry="11" opacity="0.6" />
+      <ellipse cx="210" cy="460" rx="18" ry="8" opacity="0.55" />
+    </g>
+    <path d="M 669 131 A 380 380 0 0 1 780 400 A 380 380 0 0 1 400 780 A 380 380 0 0 1 131 669 C 360 650 650 360 669 131 Z" fill="#0b092b" opacity="0.45" />
+    <path d="M 131.3 131.3 A 380 380 0 0 1 668.7 131.3 C 540 200 320 280 131.3 131.3 Z" fill="#ffffff" opacity="0.12" />
+  </g>
+</svg>

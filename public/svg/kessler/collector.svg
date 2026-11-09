@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="collector-g-body-hi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#4cc9f0"/>
+      <stop offset="100%" stop-color="#4361ee"/>
+    </linearGradient>
+    <linearGradient id="collector-g-body-sh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4361ee"/>
+      <stop offset="60%" stop-color="#1a1446"/>
+      <stop offset="100%" stop-color="#0b092b"/>
+    </linearGradient>
+    <linearGradient id="collector-g-solar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4361ee"/>
+      <stop offset="70%" stop-color="#1a1446"/>
+      <stop offset="100%" stop-color="#0b092b"/>
+    </linearGradient>
+    <linearGradient id="collector-g-claw-hi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#b8b5e0"/>
+      <stop offset="100%" stop-color="#8d86c9"/>
+    </linearGradient>
+    <linearGradient id="collector-g-claw-sh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8d86c9"/>
+      <stop offset="60%" stop-color="#1a1446"/>
+      <stop offset="100%" stop-color="#0b092b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Solar wings -->
+  <rect x="124" y="124" width="10" height="36" fill="#8d86c9"/>
+  <circle cx="129" cy="124" r="5" fill="#ffd166"/>
+  <rect x="98" y="52" width="62" height="72" rx="4" fill="url(#collector-g-solar)"/>
+  <rect x="98" y="52" width="62" height="4" rx="2" fill="#ffffff" opacity="0.8"/>
+  <path d="M118,56 V124 M140,56 V124 M98,76 H160 M98,100 H160" stroke="#4cc9f0" stroke-width="0.8" opacity="0.6"/>
+
+  <rect x="124" y="240" width="10" height="36" fill="#8d86c9"/>
+  <circle cx="129" cy="276" r="5" fill="#ffd166"/>
+  <rect x="98" y="276" width="62" height="72" rx="4" fill="url(#collector-g-solar)"/>
+  <rect x="98" y="344" width="62" height="4" rx="2" fill="#1a1446"/>
+  <path d="M118,276 V344 M140,276 V344 M98,300 H160 M98,324 H160" stroke="#4cc9f0" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Body & thrusters -->
+  <rect x="70" y="180" width="22" height="40" rx="3" fill="#1a1446"/>
+  <polygon points="70,186 58,182 58,194 70,192" fill="#8d86c9"/>
+  <polygon points="70,208 58,206 58,218 70,214" fill="#8d86c9"/>
+  <ellipse cx="50" cy="188" rx="8" ry="4" fill="#4cc9f0" opacity="0.6"/>
+  <ellipse cx="50" cy="212" rx="8" ry="4" fill="#4cc9f0" opacity="0.6"/>
+
+  <path d="M102,160 L157,160 Q167,160 167,170 L167,200 L92,200 L92,170 Q92,160 102,160 Z" fill="url(#collector-g-body-hi)"/>
+  <path d="M92,200 L167,200 L167,230 Q167,240 157,240 L102,240 Q92,240 92,230 L92,200 Z" fill="url(#collector-g-body-sh)"/>
+
+  <path d="M167,184 Q180,200 167,216 Z" fill="#4cc9f0"/>
+  <ellipse cx="170" cy="195" rx="2" ry="4" fill="#ffffff" opacity="0.8"/>
+
+  <rect x="108" y="164" width="22" height="6" rx="3" fill="#f72585"/>
+  <rect x="108" y="230" width="22" height="6" rx="3" fill="#f72585"/>
+  <circle cx="148" cy="178" r="3.5" fill="#ff5d8f"/>
+  <circle cx="148" cy="178" r="1.5" fill="#ffffff"/>
+
+  <!-- Shoulder & Bicep -->
+  <circle cx="168" cy="200" r="14" fill="#8d86c9"/>
+  <circle cx="168" cy="200" r="9" fill="#1a1446"/>
+  <circle cx="168" cy="200" r="3.5" fill="#ffd166"/>
+  <polygon points="168,193 218,178 218,187 168,201" fill="#b8b5e0"/>
+  <polygon points="168,201 218,187 218,195 168,208" fill="#1a1446"/>
+  <line x1="174" y1="205" x2="210" y2="198" stroke="#ffd166" stroke-width="2.6" stroke-linecap="round"/>
+
+  <!-- Elbow & Forearm -->
+  <circle cx="218" cy="185" r="11" fill="#8d86c9"/>
+  <circle cx="218" cy="185" r="6" fill="#1a1446"/>
+  <circle cx="218" cy="185" r="2.5" fill="#ffb703"/>
+  <polygon points="218,178 270,192 270,202 218,188" fill="#ffffff"/>
+  <polygon points="218,188 270,202 270,212 218,198" fill="#8d86c9"/>
+  <polygon points="232,182 238,183 234,204 228,203" fill="#ffb703"/>
+  <polygon points="244,185 250,186 246,207 240,206" fill="#ffb703"/>
+  <polygon points="256,188 262,189 258,210 252,209" fill="#ffb703"/>
+
+  <!-- Wrist & Targeting Emitter -->
+  <circle cx="270" cy="200" r="15" fill="#1a1446"/>
+  <circle cx="274" cy="200" r="5" fill="#f72585"/>
+  <circle cx="274" cy="200" r="2" fill="#ffffff"/>
+  <polygon points="278,197 296,197 302,200 296,203 278,203" fill="#8d86c9"/>
+  <circle cx="302" cy="200" r="2.2" fill="#ff5d8f"/>
+
+  <!-- Upper Claw Jaw -->
+  <path d="M270,188 Q284,154 308,142 Q328,144 340,168 L332,172 Q320,154 306,152 Q286,164 276,194 Z" fill="url(#collector-g-claw-hi)"/>
+  <path d="M284,182 Q300,162 316,158 Q326,164 332,172 L328,175 Q322,168 314,163 Q300,167 286,186 Z" fill="#1a1446"/>
+  <polygon points="298,168 304,165 301,173" fill="#ffd166"/>
+  <polygon points="314,163 320,161 316,168" fill="#ffd166"/>
+  <polygon points="328,171 334,171 330,177" fill="#ffd166"/>
+  <circle cx="308" cy="142" r="3.5" fill="#f72585"/>
+  <circle cx="308" cy="142" r="1.5" fill="#ffffff"/>
+
+  <!-- Lower Claw Jaw -->
+  <path d="M270,212 Q284,246 308,258 Q328,256 340,232 L332,228 Q320,246 306,248 Q286,236 276,206 Z" fill="url(#collector-g-claw-sh)"/>
+  <path d="M284,218 Q300,238 316,242 Q326,236 332,228 L328,225 Q322,232 314,237 Q300,233 286,214 Z" fill="#1a1446"/>
+  <polygon points="298,232 304,235 301,227" fill="#ffd166"/>
+  <polygon points="314,237 320,239 316,232" fill="#ffd166"/>
+  <polygon points="328,229 334,229 330,223" fill="#ffd166"/>
+  <circle cx="308" cy="258" r="3.5" fill="#f72585"/>
+  <circle cx="308" cy="258" r="1.5" fill="#ffffff"/>
+</svg>

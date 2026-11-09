@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="d2-g-bright" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#ffb703"/>
+    </linearGradient>
+    <linearGradient id="d2-g-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#ffb703"/>
+    </linearGradient>
+    <linearGradient id="d2-g-orange" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffb703"/>
+      <stop offset="100%" stop-color="#ff7b00"/>
+    </linearGradient>
+    <linearGradient id="d2-g-shadow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7b00"/>
+      <stop offset="100%" stop-color="#1a1446"/>
+    </linearGradient>
+    <linearGradient id="d2-g-deep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1446"/>
+      <stop offset="100%" stop-color="#0b092b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Crinkled gold foil faceted mesh -->
+  <!-- Top bright face catching direct sunlight -->
+  <polygon points="50,18 88,24 72,44 54,52" fill="url(#d2-g-bright)"/>
+
+  <!-- Left top flap -->
+  <polygon points="50,18 54,52 22,42" fill="url(#d2-g-gold)"/>
+
+  <!-- Right angular tear facet -->
+  <polygon points="88,24 102,52 74,64 72,44" fill="url(#d2-g-orange)"/>
+
+  <!-- Central crumpled facet -->
+  <polygon points="54,52 72,44 74,64 44,68" fill="url(#d2-g-gold)"/>
+
+  <!-- Deep shadow fold behind crease -->
+  <polygon points="22,42 54,52 44,68 20,68" fill="url(#d2-g-shadow)"/>
+
+  <!-- Lower-right curled fold -->
+  <polygon points="74,64 102,52 94,68 98,86 68,82" fill="url(#d2-g-orange)"/>
+
+  <!-- Bottom tip bright reflection -->
+  <polygon points="74,64 68,82 62,102 44,68" fill="url(#d2-g-bright)"/>
+
+  <!-- Bottom-left torn back-face / dark foil side -->
+  <polygon points="44,68 62,102 36,88 20,68" fill="url(#d2-g-deep)"/>
+
+  <!-- Micro-tears and curling ribbon strips -->
+  <polygon points="98,86 106,94 96,98 90,88" fill="url(#d2-g-bright)"/>
+  <polygon points="96,98 106,94 104,97" fill="#ff7b00"/>
+  <polygon points="18,34 26,30 22,38" fill="#ffd166"/>
+  <polygon points="102,52 108,58 100,60" fill="#ffd166"/>
+
+  <!-- Crisp white crease lines for crinkled foil effect -->
+  <polyline points="50,18 54,52 72,44 88,24" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-linecap="round" opacity="0.75"/>
+  <polyline points="54,52 44,68 62,102" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-linecap="round" opacity="0.6"/>
+  <polyline points="72,44 74,64 68,82" fill="none" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" opacity="0.6"/>
+</svg>

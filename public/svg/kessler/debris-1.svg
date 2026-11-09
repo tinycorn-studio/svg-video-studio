@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="d1-light" x1="0%" y1="0%" x2="100%" y2="60%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#b8b5e0"/>
+    </linearGradient>
+    <linearGradient id="d1-mid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8d86c9"/>
+      <stop offset="100%" stop-color="#4361ee"/>
+    </linearGradient>
+    <linearGradient id="d1-dark" x1="0%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#1a1446"/>
+      <stop offset="100%" stop-color="#0b092b"/>
+    </linearGradient>
+    <linearGradient id="d1-bevel" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#4361ee"/>
+      <stop offset="100%" stop-color="#1a1446"/>
+    </linearGradient>
+    <linearGradient id="d1-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#ffb703"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main jagged shard facets -->
+  <polygon points="26,22 92,26 58,48" fill="url(#d1-light)"/>
+  <polygon points="92,26 104,58 78,68 58,48" fill="url(#d1-mid)"/>
+  <polygon points="78,68 104,58 74,98" fill="url(#d1-dark)"/>
+  <polygon points="58,48 78,68 74,98 44,88 38,62" fill="url(#d1-bevel)"/>
+  <polygon points="26,22 58,48 38,62 18,62" fill="#8d86c9"/>
+
+  <!-- Exposed gold thermal foil layer under fracture notch -->
+  <polygon points="38,62 44,88 32,82 18,62" fill="url(#d1-gold)"/>
+
+  <!-- Chamfered structural ridge line / highlight edge -->
+  <polyline points="26,22 58,48 78,68 74,98" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+
+  <!-- Rivet / bolt holes along upper structural frame -->
+  <circle cx="44" cy="30" r="2.2" fill="#1a1446"/>
+  <circle cx="43.5" cy="29.5" r="0.7" fill="#ffffff" opacity="0.8"/>
+  <circle cx="64" cy="32" r="2.2" fill="#1a1446"/>
+  <circle cx="63.5" cy="31.5" r="0.7" fill="#ffffff" opacity="0.8"/>
+  <circle cx="82" cy="34" r="2.2" fill="#1a1446"/>
+  <circle cx="81.5" cy="33.5" r="0.7" fill="#ffffff" opacity="0.8"/>
+
+  <!-- Secondary fractured splinter shards nearby -->
+  <polygon points="96,82 108,76 102,94" fill="url(#d1-gold)"/>
+  <polygon points="102,94 108,76 106,96" fill="#ff7b00"/>
+  <polygon points="14,36 22,32 18,42" fill="#4cc9f0"/>
+</svg>
