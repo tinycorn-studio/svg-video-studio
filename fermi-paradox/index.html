@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <title>La Paradoja de Fermi: ¿Por qué estamos solos en el Universo?</title>
+  <!-- Thư viện đồ họa Vector & Chuyển động -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/roughjs@4.6.6/bundled/rough.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      background: #04020b;
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: #f8fafc;
+      user-select: none;
+    }
+    #stage {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      background: #04020b;
+    }
+    .scene {
+      position: absolute;
+      inset: 0;
+      width: 1920px;
+      height: 1080px;
+      opacity: 0;
+      display: none;
+      pointer-events: none;
+    }
+    .scene.active {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    /* Thanh phụ đề chuẩn rạp phim / YouTube Explainer */
+    .caption-box {
+      position: absolute;
+      bottom: 42px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(10, 15, 30, 0.94);
+      border: 2px solid #38bdf8;
+      border-radius: 999px;
+      padding: 14px 44px;
+      max-width: 1600px;
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      color: #f8fafc;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+      z-index: 100;
+    }
+    .caption-box span.highlight {
+      color: #facc15;
+    }
+    /* Huy hiệu tiêu đề trên đỉnh */
+    .top-badge {
+      position: absolute;
+      top: 36px;
+      left: 60px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 90;
+    }
+    .top-badge .tag {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1.5px solid #38bdf8;
+      color: #38bdf8;
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .top-badge .title {
+      font-size: 26px;
+      font-weight: 900;
+      color: #f8fafc;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+<body>
+  <div
+    id="stage"
+    data-composition-id="fermi"
+    data-start="0"
+    data-duration="174"
+    data-width="1920"
+    data-height="1080"
+    data-fps="30"
+  >
+    <!-- 6 TRACKS ÂM THANH TIẾNG TÂY BAN NHA TƯƠNG ỨNG 6 CẢNH -->
+    <audio id="audio-scene-1" class="clip" data-start="0" data-duration="31.8" data-track-index="0" src="audio/scene1.wav"></audio>
+    <audio id="audio-scene-2" class="clip" data-start="31.8" data-duration="28.8" data-track-index="0" src="audio/scene2.wav"></audio>
+    <audio id="audio-scene-3" class="clip" data-start="60.6" data-duration="33.4" data-track-index="0" src="audio/scene3.wav"></audio>
+    <audio id="audio-scene-4" class="clip" data-start="94.0" data-duration="28.9" data-track-index="0" src="audio/scene4.wav"></audio>
+    <audio id="audio-scene-5" class="clip" data-start="122.9" data-duration="27.9" data-track-index="0" src="audio/scene5.wav"></audio>
+    <audio id="audio-scene-6" class="clip" data-start="150.8" data-duration="22.4" data-track-index="0" src="audio/scene6.wav"></audio>
+
+    <!-- HUY HIỆU ĐẦU TRANG -->
+    <div class="top-badge" data-layout-ignore="true">
+      <div class="tag">CIENCIA & COSMOS</div>
+      <div class="title">LA PARADOJA DE FERMI</div>
+    </div>
+
+    <!-- ==============================================================
+         ESCENA 1: EL GRAN SILENCIO (0s - 31.8s)
+         ============================================================== -->
+    <div id="scene1" class="scene active" data-hold>
+      <svg width="1920" height="1080" viewBox="0 0 1920 1080" data-layout-allow-overflow>
+        <defs>
+          <radialGradient id="galaxy-core" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#fef08a" stopOpacity="1" />
+            <stop offset="35%" stopColor="#f59e0b" stopOpacity="0.8" />
+            <stop offset="70%" stopColor="#8b5cf6" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#04020b" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        <!-- Nền trời sao lấp lánh -->
+        <g id="stars-layer">
+          <circle cx="200" cy="180" r="2.5" fill="#ffffff" opacity="0.8" />
+          <circle cx="450" cy="240" r="1.5" fill="#ffffff" opacity="0.6" />
+          <circle cx="850" cy="120" r="3" fill="#38bdf8" opacity="0.9" />
+          <circle cx="1200" cy="190" r="2" fill="#ffffff" opacity="0.7" />
+          <circle cx="1650" cy="150" r="2.5" fill="#facc15" opacity="0.8" />
+          <circle cx="1780" cy="340" r="1.5" fill="#ffffff" opacity="0.5" />
+          <circle cx="150" cy="650" r="2" fill="#ffffff" opacity="0.6" />
+          <circle cx="380" cy="850" r="2.5" fill="#38bdf8" opacity="0.8" />
+          <circle cx="1700" cy="800" r="3" fill="#ffffff" opacity="0.7" />
+        </g>
+
+        <!-- Galaxia Espiral giratoria -->
+        <g id="galaxy-group" data-layout-allow-overflow transform="translate(960, 500)">
+          <ellipse cx="0" cy="0" rx="420" ry="210" fill="url(#galaxy-core)" />
+          <!-- Các nhánh xoắn ốc -->
+          <path d="M 0 0 Q 180 -120 340 -60 Q 420 10 380 90" fill="none" stroke="#c084fc" stroke-width="6" opacity="0.5" />
+          <path d="M 0 0 Q -180 120 -340 60 Q -420 -10 -380 -90" fill="none" stroke="#38bdf8" stroke-width="6" opacity="0.5" />
+          <circle cx="0" cy="0" r="45" fill="#ffffff" filter="drop-shadow(0 0 20px #fef08a)" />
+        </g>
+
+        <!-- Trái đất và sóng vô tuyến phát vào vũ trụ -->
+        <g id="earth-signal-group" transform="translate(420, 520)">
+          <circle class="radio-pulse" cx="0" cy="0" r="30" fill="none" stroke="#38bdf8" stroke-width="3" opacity="1" />
+          <circle class="radio-pulse" cx="0" cy="0" r="70" fill="none" stroke="#38bdf8" stroke-width="2.5" opacity="0.7" />
+          <circle class="radio-pulse" cx="0" cy="0" r="120" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.4" />
+        </g>
+
+        <!-- Chữ lớn: "¿DÓNDE ESTÁN TODOS?" -->
+        <g id="s1-text-group">
+          <rect x="740" y="720" width="440" height="70" rx="35" fill="rgba(239, 68, 68, 0.2)" stroke="#ef4444" stroke-width="2" />
+          <text x="960" y="766" text-anchor="middle" fill="#fca5a5" font-size="28" font-weight="900" letter-spacing="4">
+            ¿DÓNDE ESTÁN TODOS?
+          </text>
+        </g>
+      </svg>
+
+      <!-- Thẻ số liệu vũ trụ bên phải -->
+      <div id="s1-card1" data-layout-ignore="true" style="position: absolute; right: 80px; top: 220px; width: 440px; background: rgba(15,23,42,0.9); border: 2px solid #38bdf8; border-radius: 24px; padding: 24px;">
+        <div style="color: #38bdf8; font-size: 16px; font-weight: 800; text-transform: uppercase;">Universo Observable</div>
+        <div style="color: #f8fafc; font-size: 38px; font-weight: 900; margin: 4px 0;">2 Billones</div>
+        <div style="color: #94a3b8; font-size: 18px;">de galaxias en el cosmos</div>
+      </div>
+
+      <div id="s1-card2" data-layout-ignore="true" style="position: absolute; right: 80px; top: 400px; width: 440px; background: rgba(15,23,42,0.9); border: 2px solid #facc15; border-radius: 24px; padding: 24px;">
+        <div style="color: #facc15; font-size: 16px; font-weight: 800; text-transform: uppercase;">Nuestra Galaxia</div>
+        <div style="color: #f8fafc; font-size: 38px; font-weight: 900; margin: 4px 0;">100.000 Millones</div>
+        <div style="color: #94a3b8; font-size: 18px;">de estrellas con planetas</div>
+      </div>
+
+      <div id="earth-badge" data-layout-ignore="true" style="position: absolute; left: 350px; top: 460px; display: flex; flex-direction: column; align-items: center;">
+        <iconify-icon icon="twemoji:globe-showing-americas" width="130" height="130"></iconify-icon>
+        <div style="color: #f8fafc; font-weight: 800; font-size: 22px; margin-top: 8px;">Tierra (4.500 M años)</div>
+      </div>
+    </div>
+
+    <!-- ==============================================================
+         ESCENA 2: LA ESCALA DE KARDASHEV (31.8s - 60.6s)
+         ============================================================== -->
+    <div id="scene2" class="scene" data-hold>
+      <svg width="1920" height="1080" viewBox="0 0 1920 1080" data-layout-allow-overflow>
+        <defs>
+          <radialGradient id="sun-core" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#ffffff" />
+            <stop offset="40%" stopColor="#fef08a" />
+            <stop offset="75%" stopColor="#f59e0b" />
+            <stop offset="100%" stopColor="#b45309" stopOpacity="0.8" />
+          </radialGradient>
+        </defs>
+
+        <!-- Tiêu đề phân cảnh -->
+        <text x="960" y="140" text-anchor="middle" fill="#f8fafc" font-size="52" font-weight="900">
+          LA ESCALA DE KARDASHEV (1964)
+        </text>
+        <text x="960" y="190" text-anchor="middle" fill="#38bdf8" font-size="28" font-weight="700" letter-spacing="3">
+          CLASIFICACIÓN DE CIVILIZACIONES POR SU CONSUMO ENERGÉTICO
+        </text>
+
+        <!-- Mô hình Esfera de Dyson ở trung tâm -->
+        <g id="dyson-sphere-group" transform="translate(1420, 550)">
+          <g id="dyson-rotor">
+            <!-- Ngôi sao ở giữa -->
+            <circle cx="0" cy="0" r="95" fill="url(#sun-core)" filter="drop-shadow(0 0 35px #f59e0b)" />
+            <!-- Vòng khung lồng Dyson xoay -->
+            <ellipse cx="0" cy="0" rx="210" ry="85" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="16 12" />
+            <ellipse cx="0" cy="0" rx="190" ry="120" fill="none" stroke="#facc15" stroke-width="4" stroke-dasharray="14 10" transform="rotate(55)" />
+            <ellipse cx="0" cy="0" rx="190" ry="120" fill="none" stroke="#facc15" stroke-width="4" stroke-dasharray="14 10" transform="rotate(-55)" />
+            <!-- Vệ tinh hấp thụ năng lượng -->
+            <circle cx="210" cy="0" r="14" fill="#38bdf8" />
+            <circle cx="-130" cy="85" r="12" fill="#facc15" />
+            <circle cx="120" cy="-90" r="12" fill="#facc15" />
+          </g>
+          <text x="0" y="270" text-anchor="middle" fill="#facc15" font-size="28" font-weight="800">
+            Esfera de Dyson (Megaestructura)
+          </text>
+        </g>
+      </svg>
+
+      <!-- 3 Thẻ Tipo 1, Tipo 2, Tipo 3 bên trái -->
+      <div id="kardashev-cards" data-layout-ignore="true" style="position: absolute; left: 120px; top: 250px; display: flex; flex-direction: column; gap: 24px; width: 680px;">
+        <!-- Tipo 1 -->
+        <div class="k-card" style="background: #1e293b; border-left: 8px solid #22c55e; border-radius: 18px; padding: 24px; display: flex; align-items: center; gap: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+          <iconify-icon icon="twemoji:globe-showing-europe-africa" width="68" height="68"></iconify-icon>
+          <div>
+            <div style="color: #22c55e; font-size: 20px; font-weight: 800;">TIPO I: PLANETARIA (~10¹⁶ W)</div>
+            <div style="color: #f8fafc; font-size: 22px; font-weight: 700; margin-top: 4px;">Domina la energía total de su planeta natal</div>
+            <div style="color: #94a3b8; font-size: 16px;">(La humanidad actual está en ~0.73)</div>
+          </div>
+        </div>
+
+        <!-- Tipo 2 -->
+        <div class="k-card" style="background: #1e293b; border-left: 8px solid #facc15; border-radius: 18px; padding: 24px; display: flex; align-items: center; gap: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+          <iconify-icon icon="twemoji:sun" width="68" height="68"></iconify-icon>
+          <div>
+            <div style="color: #facc15; font-size: 20px; font-weight: 800;">TIPO II: ESTELAR (~10²⁶ W)</div>
+            <div style="color: #f8fafc; font-size: 22px; font-weight: 700; margin-top: 4px;">Construye una Esfera de Dyson alrededor de su sol</div>
+            <div style="color: #94a3b8; font-size: 16px;">Emite radiación infrarroja detectable</div>
+          </div>
+        </div>
+
+        <!-- Tipo 3 -->
+        <div class="k-card" style="background: #1e293b; border-left: 8px solid #a855f7; border-radius: 18px; padding: 24px; display: flex; align-items: center; gap: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+          <iconify-icon icon="twemoji:milky-way" width="68" height="68"></iconify-icon>
+          <div>
+            <div style="color: #a855f7; font-size: 20px; font-weight: 800;">TIPO III: GALÁCTICA (~10³⁶ W)</div>
+            <div style="color: #f8fafc; font-size: 22px; font-weight: 700; margin-top: 4px;">Aprovecha la energía de miles de millones de estrellas</div>
+            <div style="color: #94a3b8; font-size: 16px;">Visible en todo el cielo observable</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==============================================================
+         ESCENA 3: HIPÓTESIS 1 - EL GRAN FILTRO (60.6s - 94.0s)
+         ============================================================== -->
+    <div id="scene3" class="scene" data-hold>
+      <svg width="1920" height="1080" viewBox="0 0 1920 1080">
+        <text x="960" y="140" text-anchor="middle" fill="#ef4444" font-size="52" font-weight="900">
+          TEORÍA 1: EL GRAN FILTRO
+        </text>
+        <text x="960" y="190" text-anchor="middle" fill="#fca5a5" font-size="28" font-weight="700" letter-spacing="3">
+          ¿UNA BARRERA INSIGNIFICANTE O NUESTRA SENTENCIA DE MUERTE?
+        </text>
+
+        <!-- Trục tiến hóa từ trái sang phải -->
+        <line x1="220" y1="520" x2="1700" y2="520" stroke="#334155" stroke-width="8" stroke-linecap="round" />
+
+        <!-- 4 Nấc thang tiến hóa -->
+        <g id="evolution-steps" data-layout-ignore="true">
+          <!-- Bước 1: Hóa học vô sinh -->
+          <circle cx="320" cy="520" r="32" fill="#3b82f6" />
+          <text x="320" y="450" text-anchor="middle" fill="#60a5fa" font-size="22" font-weight="800">1. Materia Inerte</text>
+          <text x="320" y="600" text-anchor="middle" fill="#94a3b8" font-size="18">Sopa Química Primordial</text>
+
+          <!-- Bước 2: Tế bào đơn bào -->
+          <circle cx="680" cy="520" r="32" fill="#10b981" />
+          <text x="680" y="450" text-anchor="middle" fill="#34d399" font-size="22" font-weight="800">2. Célula Viva</text>
+          <text x="680" y="600" text-anchor="middle" fill="#94a3b8" font-size="18">ADN / Reproducción</text>
+
+          <!-- Bước 3: Đa bào & Trí tuệ -->
+          <circle cx="1040" cy="520" r="32" fill="#f59e0b" />
+          <text x="1040" y="450" text-anchor="middle" fill="#fbbf24" font-size="22" font-weight="800">3. Inteligencia Humana</text>
+          <text x="1040" y="600" text-anchor="middle" fill="#94a3b8" font-size="18">Herramientas y Ciencia (Hoy)</text>
+
+          <!-- Bước 4: Chinh phục thiên hà -->
+          <circle cx="1600" cy="520" r="32" fill="#a855f7" />
+          <text x="1600" y="450" text-anchor="middle" fill="#c084fc" font-size="22" font-weight="800">4. Expansión Interestelar</text>
+          <text x="1600" y="600" text-anchor="middle" fill="#94a3b8" font-size="18">Colonización Galáctica</text>
+        </g>
+
+        <!-- TƯỜNG ĐỎ CỦA EL GRAN FILTRO -->
+        <g id="filter-wall" data-layout-ignore="true" transform="translate(1320, 310)">
+          <rect x="0" y="0" width="36" height="420" rx="18" fill="#ef4444" filter="drop-shadow(0 0 24px #ef4444)" />
+          <text x="18" y="-20" text-anchor="middle" fill="#ef4444" font-size="26" font-weight="900" letter-spacing="2">
+            EL GRAN FILTRO
+          </text>
+          <!-- Cảnh báo nguy hiểm -->
+          <text x="18" y="470" text-anchor="middle" fill="#fca5a5" font-size="20" font-weight="700">
+            Guerra Nuclear / IA / Cambio Climático
+          </text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- ==============================================================
+         ESCENA 4: HIPÓTESIS 2 - EL BOSQUE OSCURO (94.0s - 122.9s)
+         ============================================================== -->
+    <div id="scene4" class="scene" data-hold>
+      <svg width="1920" height="1080" viewBox="0 0 1920 1080">
+        <defs>
+          <filter id="radar-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#00f0ff" flood-opacity="0.8" />
+          </filter>
+        </defs>
+
+        <text x="960" y="140" text-anchor="middle" fill="#00f0ff" font-size="52" font-weight="900">
+          TEORÍA 2: LA HIPÓTESIS DEL BOSQUE OSCURO
+        </text>
+        <text x="960" y="190" text-anchor="middle" fill="#67e8f9" font-size="28" font-weight="700" letter-spacing="3">
+          EL UNIVERSO ES UN BOSQUE SILENCIOSO DONDE CADA CIVILIZACIÓN ES UN CAZADOR
+        </text>
+
+        <!-- Radar chiến thuật trung tâm -->
+        <g transform="translate(960, 560)" data-layout-ignore="true">
+          <circle cx="0" cy="0" r="340" fill="none" stroke="#00f0ff" stroke-width="2" opacity="0.3" />
+          <circle cx="0" cy="0" r="230" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="8 8" opacity="0.4" />
+          <circle cx="0" cy="0" r="120" fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.5" />
+          <!-- Tia quét Radar quay -->
+          <line id="s4-sweep-line" x1="0" y1="0" x2="340" y2="0" stroke="#00f0ff" stroke-width="4" filter="url(#radar-glow)" />
+
+          <!-- Các civilizaciones ẩn nấp -->
+          <circle cx="-160" cy="-140" r="10" fill="#22c55e" opacity="0.7" />
+          <text x="-160" y="-165" text-anchor="middle" fill="#22c55e" font-size="16" font-family="monospace">CIV-A [SILENCIO ACTIVO]</text>
+
+          <circle cx="210" cy="110" r="10" fill="#facc15" opacity="0.7" />
+          <text x="210" y="145" text-anchor="middle" fill="#facc15" font-size="16" font-family="monospace">CIV-B [CAMUFLAJE]</text>
+
+          <!-- Trái đất phát tín hiệu thiếu cảnh giác -->
+          <circle cx="0" cy="0" r="18" fill="#ef4444" filter="url(#radar-glow)" />
+          <text x="0" y="45" text-anchor="middle" fill="#ef4444" font-size="20" font-weight="900" font-family="monospace">
+            TIERRA [EMITIENDO SEÑAL] ⚠️
+          </text>
+        </g>
+      </svg>
+
+      <!-- Quy tắc 3 mệnh đề của Rừng Tối bên góc trái -->
+      <div data-layout-ignore="true" style="position: absolute; left: 100px; top: 320px; width: 440px; background: rgba(2,11,20,0.92); border: 2px solid #00f0ff; border-radius: 20px; padding: 24px; font-family: monospace;">
+        <div style="color: #00f0ff; font-size: 20px; font-weight: 800; margin-bottom: 14px;">AXIOMAS DEL BOSQUE OSCURO:</div>
+        <div style="color: #cbd5e1; font-size: 17px; line-height: 1.8;">
+          1. La supervivencia es la necesidad primaria.<br />
+          2. La civilización crece, pero la materia es finita.<br />
+          3. Las intenciones del otro son incognoscibles.<br />
+          <span style="color: #ef4444; font-weight: bold;">➜ Conclusión: Disparar primero.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==============================================================
+         ESCENA 5: HIPÓTESIS 3 - LA SINGULARIDAD Y EL ZOOLÓGICO (122.9s - 150.8s)
+         ============================================================== -->
+    <div id="scene5" class="scene" data-hold>
+      <svg width="1920" height="1080" viewBox="0 0 1920 1080">
+        <text x="960" y="140" text-anchor="middle" fill="#c084fc" font-size="52" font-weight="900">
+          TEORÍA 3: VIRTUALIZACIÓN O ZOOLÓGICO CÓSMICO
+        </text>
+        <text x="960" y="190" text-anchor="middle" fill="#e9d5ff" font-size="28" font-weight="700" letter-spacing="3">
+          ¿MUNDOS DIGITALES INTERNOS O UNA RESERVA NATURAL PROTEGIDA?
+        </text>
+
+        <!-- Khối siêu máy tính lượng tử mô phỏng bên trái -->
+        <g id="hypercube-group" transform="translate(560, 540)">
+          <!-- Khối lập phương Isometric -->
+          <polygon points="0,-120 140,-50 0,20 -140,-50" fill="#c084fc" stroke="#f3e8ff" stroke-width="2" opacity="0.9" />
+          <polygon points="-140,-50 0,20 0,160 -140,90" fill="#7e22ce" stroke="#f3e8ff" stroke-width="2" />
+          <polygon points="0,20 140,-50 140,90 0,160" fill="#9333ea" stroke="#f3e8ff" stroke-width="2" />
+          <g data-layout-ignore="true">
+            <text x="0" y="210" text-anchor="middle" fill="#c084fc" font-size="28" font-weight="800">
+              Computación Cuántica Matrioshka
+            </text>
+            <text x="0" y="248" text-anchor="middle" fill="#94a3b8" font-size="18">
+              Trillones de mentes en simulaciones perfectas
+            </text>
+          </g>
+        </g>
+
+        <!-- Mô hình Vườn bách thú bên phải (Trái Đất trong lồng kính bảo vệ) -->
+        <g id="zoo-group" transform="translate(1360, 540)">
+          <!-- Vòm năng lượng bảo vệ -->
+          <circle cx="0" cy="0" r="160" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="3" stroke-dasharray="12 8" />
+          <!-- Trái đất -->
+          <circle cx="0" cy="0" r="60" fill="#3b82f6" />
+          <circle cx="-15" cy="-15" r="25" fill="#10b981" />
+          <circle cx="20" cy="20" r="20" fill="#10b981" />
+          <!-- Tàu do thám quan sát từ ngoài -->
+          <polygon points="0,-190 20,-215 -20,-215" fill="#facc15" />
+          <line x1="0" y1="-190" x2="0" y2="-100" stroke="#facc15" stroke-width="2" stroke-dasharray="6 6" opacity="0.7" />
+          <g data-layout-ignore="true">
+            <text x="0" y="210" text-anchor="middle" fill="#38bdf8" font-size="28" font-weight="800">
+              Hipótesis del Zoológico Cósmico
+            </text>
+            <text x="0" y="248" text-anchor="middle" fill="#94a3b8" font-size="18">
+              Nos observan sin intervenir hasta que maduremos
+            </text>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <!-- ==============================================================
+         ESCENA 6: CONCLUSIÓN - EL VALOR DE SER LOS PRIMEROS (150.8s - 173.2s)
+         ============================================================== -->
+    <div id="scene6" class="scene" data-hold>
+      <svg width="1920" height="1080" viewBox="0 0 1920 1080" data-layout-allow-overflow>
+        <defs>
+          <linearGradient id="dawn-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#0f172a" />
+            <stop offset="50%" stopColor="#312e81" />
+            <stop offset="80%" stopColor="#c026d3" />
+            <stop offset="100%" stopColor="#f59e0b" />
+          </linearGradient>
+        </defs>
+
+        <!-- Bầu trời bình minh vũ trụ -->
+        <rect width="1920" height="1080" fill="url(#dawn-sky)" opacity="0.65" />
+
+        <!-- Trái đất tỏa sáng rực rỡ ở đáy -->
+        <g id="dawn-earth" transform="translate(960, 920)">
+          <!-- Các lớp khí quyển phát sáng -->
+          <circle cx="0" cy="0" r="420" fill="#38bdf8" opacity="0.12" />
+          <circle cx="0" cy="0" r="360" fill="#38bdf8" opacity="0.25" />
+          <circle cx="0" cy="0" r="300" fill="#0284c7" />
+        </g>
+
+        <!-- Tên lửa phóng lên không gian mang theo ngọn đuốc sự sống -->
+        <g id="s6-rocket" data-layout-allow-overflow transform="translate(960, 420)">
+          <!-- Khói lửa -->
+          <polygon points="-12,50 12,50 0,110" fill="#facc15" />
+          <polygon points="-6,50 6,50 0,90" fill="#ef4444" />
+          <!-- Thân tên lửa -->
+          <rect x="-14" y="-30" width="28" height="80" rx="8" fill="#ffffff" />
+          <polygon points="-14,-30 14,-30 0,-65" fill="#ef4444" />
+          <!-- Cánh tên lửa -->
+          <polygon points="-14,30 -32,50 -14,50" fill="#3b82f6" />
+          <polygon points="14,30 32,50 14,50" fill="#3b82f6" />
+        </g>
+
+        <!-- Tiêu đề kết luận truyền cảm hứng -->
+        <text x="960" y="220" text-anchor="middle" fill="#ffffff" font-size="56" font-weight="900" filter="drop-shadow(0 6px 20px rgba(0,0,0,0.8))">
+          TAL VEZ SOMOS LOS PRIMEROS
+        </text>
+        <text x="960" y="280" text-anchor="middle" fill="#fef08a" font-size="28" font-weight="800" letter-spacing="3">
+          EL DESTINO DEL UNIVERSO ESTÁ EN NUESTRAS MANOS
+        </text>
+      </svg>
+    </div>
+
+    <!-- THANH PHỤ ĐỀ DƯỚI ĐÁY CHẠY THEO THỜI GIAN THẬT -->
+    <div id="caption" class="caption-box">
+      Cargando documental...
+    </div>
+  </div>
+
+  <script>
+    // Dữ liệu phụ đề đồng bộ theo giây từ các file VTT
+    const subtitles = [
+      // SCENE 1 (0s - 31.8s)
+      { start: 0.0, end: 7.8, text: "El universo observable tiene más de noventa mil millones de años luz de diámetro y al menos dos billones de galaxias." },
+      { start: 7.8, end: 17.0, text: "En nuestra Vía Láctea hay más de cien mil millones de estrellas, y casi todas tienen planetas en su órbita." },
+      { start: 17.0, end: 23.4, text: "Muchas son miles de millones de años más viejas que nuestro Sol." },
+      { start: 23.4, end: 31.8, text: "La vida tuvo tiempo de sobra para nacer, evolucionar y colonizar las estrellas. Entonces... ¿dónde están todos?" },
+
+      // SCENE 2 (31.8s - 60.6s)
+      { start: 31.8, end: 38.5, text: "En 1964, el astrofísico Nikolái Kardashev propuso clasificar las civilizaciones por su energía." },
+      { start: 38.5, end: 44.0, text: "Tipo 1: domina la energía de su planeta natal." },
+      { start: 44.0, end: 50.5, text: "Tipo 2: construye una Esfera de Dyson alrededor de su estrella para capturar toda su energía." },
+      { start: 50.5, end: 60.6, text: "Tipo 3: controla toda una galaxia. Si existieran, brillarían por todo el cielo... pero solo vemos silencio absoluto." },
+
+      // SCENE 3 (60.6s - 94.0s)
+      { start: 60.6, end: 68.0, text: "La primera gran explicación es el Gran Filtro: una barrera evolutiva casi imposible de superar." },
+      { start: 68.0, end: 77.0, text: "¿Está el filtro detrás de nosotros? Quizás el salto de la materia inerte a la primera célula viva es un milagro irrepetible." },
+      { start: 77.0, end: 85.0, text: "O peor aún... ¿está el filtro por delante de nosotros?" },
+      { start: 85.0, end: 94.0, text: "Quizás toda civilización inteligente descubre la IA o armas nucleares y se extingue antes de conquistar el espacio." },
+
+      // SCENE 4 (94.0s - 122.9s)
+      { start: 94.0, end: 101.5, text: "La segunda teoría es aterradora: la hipótesis del Bosque Oscuro." },
+      { start: 101.5, end: 110.0, text: "El universo no está vacío; está lleno de civilizaciones inteligentes que se esconden en la oscuridad absoluta." },
+      { start: 110.0, end: 122.9, text: "En un cosmos donde la supervivencia es la máxima prioridad, la opción más lógica para cualquier especie es no revelar jamás su posición." },
+
+      // SCENE 5 (122.9s - 150.8s)
+      { start: 122.9, end: 132.0, text: "Una tercera posibilidad es que las civilizaciones avanzadas no viajan en naves, sino hacia adentro." },
+      { start: 132.0, end: 141.0, text: "Construyen computadoras cuánticas gigantes y viven en universos digitales perfectos, sin necesidad de explorar el espacio físico." },
+      { start: 141.0, end: 150.8, text: "O tal vez la Tierra es un zoológico protegido, donde nos observan en silencio esperando a que maduremos." },
+
+      // SCENE 6 (150.8s - 173.2s)
+      { start: 150.8, end: 158.0, text: "Si el Gran Silencio persiste, hay una conclusión que cambia todo: tal vez somos los primeros." },
+      { start: 158.0, end: 165.5, text: "La Tierra no es un rincón insignificante, sino la cuna de la conciencia en el cosmos." },
+      { start: 165.5, end: 173.2, text: "Si estamos solos, depende de nosotros proteger este pequeño punto azul y encender la luz de la vida por toda la galaxia." }
+    ];
+
+    // Master GSAP Timeline cho HyperFrames (paused: true)
+    const tl = gsap.timeline({ paused: true });
+
+    // Helper kích hoạt cảnh
+    function setupSceneSwitch(sceneId, startSec, endSec) {
+      tl.set(`#${sceneId}`, { opacity: 1, display: "block", pointerEvents: "auto" }, startSec);
+      tl.set(`#${sceneId}`, { opacity: 0, display: "none", pointerEvents: "none" }, endSec);
+    }
+
+    setupSceneSwitch("scene1", 0, 31.8);
+    setupSceneSwitch("scene2", 31.8, 60.6);
+    setupSceneSwitch("scene3", 60.6, 94.0);
+    setupSceneSwitch("scene4", 94.0, 122.9);
+    setupSceneSwitch("scene5", 122.9, 150.8);
+    setupSceneSwitch("scene6", 150.8, 174.0);
+
+    // --- ANIMATIONS SCENE 1 ---
+    tl.to("#galaxy-group", { rotation: 180, duration: 31.8, ease: "none" }, 0);
+    tl.from("#s1-card1", { x: 100, opacity: 0, duration: 1.2, ease: "power3.out" }, 1.5);
+    tl.from("#s1-card2", { x: 100, opacity: 0, duration: 1.2, ease: "power3.out" }, 8.0);
+    tl.from("#s1-text-group", { scale: 0, opacity: 0, duration: 1.0, ease: "back.out(1.8)" }, 23.0);
+
+    // --- ANIMATIONS SCENE 2 ---
+    tl.from(".k-card", { x: -80, opacity: 0, duration: 1.0, stagger: 6.0, ease: "power3.out" }, 32.5);
+    tl.to("#dyson-rotor", { rotation: 360, transformOrigin: "0px 0px", duration: 28.8, ease: "none" }, 31.8);
+
+    // --- ANIMATIONS SCENE 3 ---
+    tl.from("#filter-wall", { scaleY: 0, duration: 1.2, ease: "power3.out" }, 61.5);
+    tl.to("#filter-wall", { opacity: 0.75, yoyo: true, repeat: 25, duration: 1.2, ease: "sine.inOut" }, 63.0);
+
+    // --- ANIMATIONS SCENE 4 ---
+    tl.to("#s4-sweep-line", { rotation: 720, transformOrigin: "0% 0%", duration: 28.9, ease: "none" }, 94.0);
+
+    // --- ANIMATIONS SCENE 5 ---
+    tl.from("#hypercube-group", { scale: 0.7, opacity: 0, duration: 1.5, ease: "back.out(1.4)" }, 123.5);
+    tl.to("#hypercube-group", { y: "+=12", yoyo: true, repeat: 10, duration: 2.5, ease: "sine.inOut" }, 125.0);
+    tl.from("#zoo-group", { scale: 0.7, opacity: 0, duration: 1.5, ease: "back.out(1.4)" }, 140.0);
+    tl.to("#zoo-group", { y: "-=10", yoyo: true, repeat: 5, duration: 2.2, ease: "sine.inOut" }, 141.5);
+
+    // --- ANIMATIONS SCENE 6 ---
+    tl.from("#dawn-earth", { y: 200, opacity: 0, duration: 2.0, ease: "power3.out" }, 151.0);
+    tl.fromTo("#s6-rocket", { y: 200 }, { y: -300, duration: 18.0, ease: "power1.inOut" }, 153.0);
+
+    // --- SUBTITLE UPDATE LOOP ---
+    const captionEl = document.getElementById("caption");
+    tl.eventCallback("onUpdate", () => {
+      const currentTime = tl.time();
+      const currentSub = subtitles.find(s => currentTime >= s.start && currentTime < s.end);
+      if (currentSub) {
+        captionEl.innerHTML = currentSub.text;
+        captionEl.style.opacity = "1";
+      } else {
+        captionEl.style.opacity = "0";
+      }
+    });
+
+    // Đăng ký timeline cho HyperFrames Engine
+    window.__timelines = window.__timelines || {};
+    window.__timelines.fermi = tl;
+  </script>
+</body>
+</html>

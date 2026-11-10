@@ -1,0 +1,434 @@
+[
+  {
+    "id": "w0",
+    "text": "Si",
+    "start": 0,
+    "end": 0.24
+  },
+  {
+    "id": "w1",
+    "text": "el",
+    "start": 0.24,
+    "end": 0.32
+  },
+  {
+    "id": "w2",
+    "text": "gran",
+    "start": 0.32,
+    "end": 0.48
+  },
+  {
+    "id": "w3",
+    "text": "silencio",
+    "start": 0.48,
+    "end": 0.96
+  },
+  {
+    "id": "w4",
+    "text": "persiste,",
+    "start": 0.96,
+    "end": 1.52
+  },
+  {
+    "id": "w5",
+    "text": "hay",
+    "start": 1.52,
+    "end": 1.68
+  },
+  {
+    "id": "w6",
+    "text": "una",
+    "start": 1.68,
+    "end": 1.84
+  },
+  {
+    "id": "w7",
+    "text": "conclusia",
+    "start": 1.84,
+    "end": 2.4
+  },
+  {
+    "id": "w8",
+    "text": "tilde",
+    "start": 2.4,
+    "end": 2.8
+  },
+  {
+    "id": "w9",
+    "text": "3N",
+    "start": 2.8,
+    "end": 3.36
+  },
+  {
+    "id": "w10",
+    "text": "que",
+    "start": 3.36,
+    "end": 3.52
+  },
+  {
+    "id": "w11",
+    "text": "cambia",
+    "start": 3.52,
+    "end": 3.84
+  },
+  {
+    "id": "w12",
+    "text": "todo.",
+    "start": 3.84,
+    "end": 4.32
+  },
+  {
+    "id": "w13",
+    "text": "Tal",
+    "start": 4.32,
+    "end": 4.56
+  },
+  {
+    "id": "w14",
+    "text": "vez",
+    "start": 4.56,
+    "end": 4.8
+  },
+  {
+    "id": "w15",
+    "text": "somos",
+    "start": 4.8,
+    "end": 5.12
+  },
+  {
+    "id": "w16",
+    "text": "los",
+    "start": 5.12,
+    "end": 5.28
+  },
+  {
+    "id": "w17",
+    "text": "primeros.",
+    "start": 5.28,
+    "end": 5.92
+  },
+  {
+    "id": "w18",
+    "text": "La",
+    "start": 5.92,
+    "end": 6.08
+  },
+  {
+    "id": "w19",
+    "text": "Tierra",
+    "start": 6.08,
+    "end": 6.4
+  },
+  {
+    "id": "w20",
+    "text": "no",
+    "start": 6.4,
+    "end": 6.48
+  },
+  {
+    "id": "w21",
+    "text": "es",
+    "start": 6.48,
+    "end": 6.56
+  },
+  {
+    "id": "w22",
+    "text": "un",
+    "start": 6.56,
+    "end": 6.72
+  },
+  {
+    "id": "w23",
+    "text": "rinca",
+    "start": 6.72,
+    "end": 7.04
+  },
+  {
+    "id": "w24",
+    "text": "tilde",
+    "start": 7.12,
+    "end": 7.52
+  },
+  {
+    "id": "w25",
+    "text": "3N",
+    "start": 7.52,
+    "end": 8
+  },
+  {
+    "id": "w26",
+    "text": "insignificante,",
+    "start": 8,
+    "end": 8.8
+  },
+  {
+    "id": "w27",
+    "text": "sino",
+    "start": 8.8,
+    "end": 8.96
+  },
+  {
+    "id": "w28",
+    "text": "la",
+    "start": 8.96,
+    "end": 9.12
+  },
+  {
+    "id": "w29",
+    "text": "cuna",
+    "start": 9.12,
+    "end": 9.44
+  },
+  {
+    "id": "w30",
+    "text": "de",
+    "start": 9.44,
+    "end": 9.52
+  },
+  {
+    "id": "w31",
+    "text": "la",
+    "start": 9.52,
+    "end": 9.6
+  },
+  {
+    "id": "w32",
+    "text": "conciencia",
+    "start": 9.6,
+    "end": 10.08
+  },
+  {
+    "id": "w33",
+    "text": "en",
+    "start": 10.08,
+    "end": 10.24
+  },
+  {
+    "id": "w34",
+    "text": "el",
+    "start": 10.24,
+    "end": 10.32
+  },
+  {
+    "id": "w35",
+    "text": "cosmos.",
+    "start": 10.32,
+    "end": 11.04
+  },
+  {
+    "id": "w36",
+    "text": "Si",
+    "start": 11.04,
+    "end": 11.36
+  },
+  {
+    "id": "w37",
+    "text": "estamos",
+    "start": 11.36,
+    "end": 11.68
+  },
+  {
+    "id": "w38",
+    "text": "solos,",
+    "start": 11.68,
+    "end": 12.16
+  },
+  {
+    "id": "w39",
+    "text": "el",
+    "start": 12.16,
+    "end": 12.32
+  },
+  {
+    "id": "w40",
+    "text": "significado",
+    "start": 12.32,
+    "end": 12.88
+  },
+  {
+    "id": "w41",
+    "text": "de",
+    "start": 12.88,
+    "end": 12.96
+  },
+  {
+    "id": "w42",
+    "text": "todo",
+    "start": 12.96,
+    "end": 13.2
+  },
+  {
+    "id": "w43",
+    "text": "el",
+    "start": 13.2,
+    "end": 13.44
+  },
+  {
+    "id": "w44",
+    "text": "universo",
+    "start": 13.44,
+    "end": 13.76
+  },
+  {
+    "id": "w45",
+    "text": "depende",
+    "start": 13.76,
+    "end": 14.24
+  },
+  {
+    "id": "w46",
+    "text": "de",
+    "start": 14.24,
+    "end": 14.4
+  },
+  {
+    "id": "w47",
+    "text": "nosotros.",
+    "start": 14.4,
+    "end": 15.12
+  },
+  {
+    "id": "w48",
+    "text": "Depende",
+    "start": 15.12,
+    "end": 15.68
+  },
+  {
+    "id": "w49",
+    "text": "de",
+    "start": 15.68,
+    "end": 15.76
+  },
+  {
+    "id": "w50",
+    "text": "nosotros",
+    "start": 15.76,
+    "end": 16.16
+  },
+  {
+    "id": "w51",
+    "text": "proteger",
+    "start": 16.16,
+    "end": 16.56
+  },
+  {
+    "id": "w52",
+    "text": "este",
+    "start": 16.56,
+    "end": 16.72
+  },
+  {
+    "id": "w53",
+    "text": "pequeatilde",
+    "start": 16.72,
+    "end": 17.6
+  },
+  {
+    "id": "w54",
+    "text": "en",
+    "start": 17.6,
+    "end": 17.76
+  },
+  {
+    "id": "w55",
+    "text": "plus",
+    "start": 17.76,
+    "end": 17.92
+  },
+  {
+    "id": "w56",
+    "text": "o",
+    "start": 18.08,
+    "end": 18.24
+  },
+  {
+    "id": "w57",
+    "text": "minuses",
+    "start": 18.24,
+    "end": 18.64
+  },
+  {
+    "id": "w58",
+    "text": "o",
+    "start": 18.96,
+    "end": 19.2
+  },
+  {
+    "id": "w59",
+    "text": "punto",
+    "start": 19.2,
+    "end": 19.52
+  },
+  {
+    "id": "w60",
+    "text": "azul",
+    "start": 19.52,
+    "end": 19.84
+  },
+  {
+    "id": "w61",
+    "text": "y",
+    "start": 19.84,
+    "end": 20
+  },
+  {
+    "id": "w62",
+    "text": "encender",
+    "start": 20,
+    "end": 20.56
+  },
+  {
+    "id": "w63",
+    "text": "la",
+    "start": 20.56,
+    "end": 20.64
+  },
+  {
+    "id": "w64",
+    "text": "luz",
+    "start": 20.64,
+    "end": 20.88
+  },
+  {
+    "id": "w65",
+    "text": "de",
+    "start": 20.88,
+    "end": 20.96
+  },
+  {
+    "id": "w66",
+    "text": "la",
+    "start": 20.96,
+    "end": 21.04
+  },
+  {
+    "id": "w67",
+    "text": "vida",
+    "start": 21.04,
+    "end": 21.28
+  },
+  {
+    "id": "w68",
+    "text": "por",
+    "start": 21.28,
+    "end": 21.44
+  },
+  {
+    "id": "w69",
+    "text": "toda",
+    "start": 21.44,
+    "end": 21.68
+  },
+  {
+    "id": "w70",
+    "text": "la",
+    "start": 21.68,
+    "end": 21.76
+  },
+  {
+    "id": "w71",
+    "text": "galaxia.",
+    "start": 21.76,
+    "end": 22.32
+  }
+]
